@@ -1,7 +1,7 @@
 {
   "name": "hardware-tools-ecommerce",
   "version": "1.0.0",
-  "description": "Professional Hardware Tools E-commerce Platform for Sri Lanka",
+  "description": "Professional Hardware Tools E-commerce Platform for Sri Lanka - ToolHub",
   "private": true,
   "scripts": {
     "dev": "next dev",
