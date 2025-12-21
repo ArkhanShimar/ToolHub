@@ -161,8 +161,8 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Hero Section */}
-        <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
+        {/* Hero Section - Dark Theme */}
+        <section className="relative z-10 min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-20">
           <div className="max-w-7xl mx-auto">
             <motion.div
               variants={staggerContainer}
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 onHoverEnd={() => setIsHovering(false)}
               >
                 <motion.h1 
-                  className="text-6xl md:text-8xl lg:text-9xl font-black text-gray-900 leading-none relative"
+                  className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none relative"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -207,7 +207,7 @@ export default function AboutPage() {
               {/* Subtitle with Typewriter Effect */}
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
               >
                 Empowering Sri Lankan industries with{" "}
                 <span className="text-accent-500 font-semibold">professional-grade tools</span>{" "}
@@ -227,10 +227,10 @@ export default function AboutPage() {
                     whileHover={{ y: -10 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200/50">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20">
                       <stat.icon className="w-8 h-8 text-accent-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                      <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                      <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                      <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                      <div className="text-sm text-gray-300 font-medium">{stat.label}</div>
                     </div>
                     
                     {/* Hover Glow Effect */}
@@ -242,8 +242,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Story Section */}
-        <section className="relative z-10 py-20 bg-white">
+        {/* Our Story Section - Light Theme */}
+        <section className="relative z-10 py-20 bg-gray-200">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               variants={staggerContainer}
@@ -292,7 +292,7 @@ export default function AboutPage() {
                 {/* Mission Statement */}
                 <motion.div
                   variants={fadeInUp}
-                  className="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 border-l-4 border-accent-500"
+                  className="bg-white rounded-2xl p-8 border-l-4 border-accent-500 shadow-lg"
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
                   <p className="text-gray-700 italic">
@@ -382,8 +382,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="relative z-10 py-20 bg-gray-50">
+        {/* Values Section - Dark Theme */}
+        <section className="relative z-10 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               variants={staggerContainer}
@@ -394,13 +394,13 @@ export default function AboutPage() {
             >
               <motion.h2 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                className="text-4xl md:text-5xl font-bold text-white mb-6"
               >
                 Our Core Values
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl text-gray-600 max-w-3xl mx-auto"
+                className="text-xl text-gray-300 max-w-3xl mx-auto"
               >
                 The principles that guide everything we do and every relationship we build
               </motion.p>
@@ -418,7 +418,7 @@ export default function AboutPage() {
                   whileHover={{ y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden">
                     {/* Background Gradient */}
                     <motion.div
                       className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -432,10 +432,10 @@ export default function AboutPage() {
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
                       {value.description}
                     </p>
 
@@ -453,8 +453,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="relative z-10 py-20 bg-white">
+        {/* Timeline Section - Light Theme */}
+        <section className="relative z-10 py-20 bg-gray-200">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               variants={staggerContainer}
@@ -548,7 +548,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* Call to Action - Dark Theme */}
         <section className="relative z-10 py-20 bg-gradient-to-br from-accent-500 to-accent-600 text-white overflow-hidden">
           {/* Background Animation */}
           <div className="absolute inset-0">
