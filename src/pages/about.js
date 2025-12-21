@@ -322,8 +322,6 @@ export default function AboutPage() {
               <motion.div
                 variants={fadeInUp}
                 className="relative mb-8"
-                onHoverStart={() => setIsHovering(true)}
-                onHoverEnd={() => setIsHovering(false)}
               >
                 <motion.h1 
                   className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none relative"
@@ -332,12 +330,6 @@ export default function AboutPage() {
                 >
                   <span className="relative inline-block">
                     ABOUT
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-accent-500/30 to-accent-600/30 -skew-x-12 blur-sm"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: isHovering ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    />
                     {/* Text Glow Effect */}
                     <motion.div
                       className="absolute inset-0 text-6xl md:text-8xl lg:text-9xl font-black text-accent-500 opacity-50 blur-sm"
