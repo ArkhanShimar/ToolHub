@@ -324,7 +324,7 @@ export default function AboutPage() {
                 className="relative mb-8"
               >
                 <motion.h1 
-                  className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none relative"
+                  className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-none relative"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -332,7 +332,7 @@ export default function AboutPage() {
                     ABOUT
                     {/* Text Glow Effect */}
                     <motion.div
-                      className="absolute inset-0 text-6xl md:text-8xl lg:text-9xl font-black text-accent-500 opacity-50 blur-sm"
+                      className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
                       animate={{
                         opacity: [0.3, 0.6, 0.3]
                       }}
@@ -356,7 +356,7 @@ export default function AboutPage() {
                     />
                     {/* Text Glow Effect */}
                     <motion.div
-                      className="absolute inset-0 text-6xl md:text-8xl lg:text-9xl font-black text-accent-500 opacity-50 blur-sm"
+                      className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
                       animate={{
                         opacity: [0.3, 0.6, 0.3]
                       }}
@@ -376,7 +376,7 @@ export default function AboutPage() {
               {/* Subtitle with Enhanced Effects */}
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed relative"
+                className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed relative"
               >
                 <motion.span
                   className="relative z-10"
@@ -907,39 +907,112 @@ export default function AboutPage() {
             {/* Founder Profile */}
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+              className="max-w-4xl mx-auto"
             >
-              {/* Left Side - Founder Image */}
+              {/* Founder Card */}
               <motion.div 
                 variants={fadeInUp}
-                className="relative group"
+                className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="relative">
-                  {/* Main Image Container */}
-                  <motion.div
-                    className="relative bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 shadow-2xl border border-white/10 overflow-hidden"
-                    whileHover={{ scale: 1.02 }}
+                {/* Animated Background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-accent-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  animate={{
+                    backgroundPosition: ["0% 0%", "100% 100%"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+                
+                {/* Shimmer Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  animate={{
+                    x: [-100, 400],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 3
+                  }}
+                />
+
+                <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                  {/* Left Side - Small Profile Image */}
+                  <motion.div 
+                    className="flex-shrink-0"
+                    whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {/* Animated Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-accent-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      animate={{
-                        backgroundPosition: ["0% 0%", "100% 100%"],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    />
-                    
-                    {/* Profile Image Placeholder */}
-                    <div className="relative z-10 aspect-[3/4] bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium shadow-inner">
+                    <div className="relative">
+                      {/* Profile Image Container - Much Smaller */}
+                      <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center text-gray-400 shadow-xl border border-white/20 relative overflow-hidden">
+                        <motion.div
+                          className="text-center"
+                          animate={{
+                            opacity: [0.7, 1, 0.7]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          <div className="text-4xl mb-2">👤</div>
+                          <div className="text-xs">Founder</div>
+                        </motion.div>
+                        
+                        {/* Image Glow */}
+                        <motion.div
+                          className="absolute inset-0 bg-accent-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      </div>
+
+                      {/* Decorative Ring */}
                       <motion.div
-                        className="text-center"
+                        className="absolute -inset-2 border-2 border-accent-500/30 rounded-2xl"
                         animate={{
-                          opacity: [0.7, 1, 0.7]
+                          rotate: [0, 360]
+                        }}
+                        transition={{
+                          duration: 20,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* Right Side - Founder Info */}
+                  <div className="flex-1 text-center md:text-left space-y-6">
+                    {/* Name and Title */}
+                    <div>
+                      <motion.h3 
+                        className="text-2xl md:text-3xl font-bold text-white mb-2"
+                        animate={{
+                          textShadow: [
+                            "0 0 10px rgba(255, 255, 255, 0.3)",
+                            "0 0 20px rgba(255, 255, 255, 0.5)",
+                            "0 0 10px rgba(255, 255, 255, 0.3)"
+                          ]
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        Rajesh Perera
+                      </motion.h3>
+                      <motion.p 
+                        className="text-accent-500 text-lg font-semibold"
+                        animate={{
+                          opacity: [0.8, 1, 0.8]
                         }}
                         transition={{
                           duration: 3,
@@ -947,178 +1020,95 @@ export default function AboutPage() {
                           ease: "easeInOut"
                         }}
                       >
-                        <div className="text-6xl mb-4">👤</div>
-                        <div>Founder Photo</div>
-                      </motion.div>
+                        Founder & CEO
+                      </motion.p>
                     </div>
 
-                    {/* Shimmer Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      animate={{
-                        x: [-100, 400],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatDelay: 3
-                      }}
-                    />
-                  </motion.div>
+                    {/* Bio */}
+                    <motion.p 
+                      className="text-gray-300 leading-relaxed"
+                      variants={fadeInUp}
+                    >
+                      With over 20 years of experience in the hardware and tools industry, Rajesh founded ToolHub 
+                      with a vision to revolutionize how Sri Lankan professionals access quality equipment.
+                    </motion.p>
 
-                  {/* Decorative Elements */}
-                  <motion.div
-                    className="absolute -top-6 -right-6 w-24 h-24 bg-accent-500/20 rounded-full blur-xl"
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0.3, 0.7, 0.3]
-                    }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <motion.div
-                    className="absolute -bottom-8 -left-8 w-32 h-32 border-2 border-white/20 rounded-full"
-                    animate={{
-                      rotate: [0, 360]
-                    }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                  />
-                </div>
-              </motion.div>
+                    {/* Achievements Row */}
+                    <motion.div 
+                      variants={staggerContainer}
+                      className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+                    >
+                      <motion.div 
+                        variants={fadeInUp}
+                        className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                      >
+                        <motion.div 
+                          className="text-xl font-bold text-accent-500 mb-1"
+                          animate={{
+                            textShadow: [
+                              "0 0 5px rgba(229, 90, 43, 0.5)",
+                              "0 0 15px rgba(229, 90, 43, 0.8)",
+                              "0 0 5px rgba(229, 90, 43, 0.5)"
+                            ]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          20+
+                        </motion.div>
+                        <div className="text-xs text-gray-400">Years Experience</div>
+                      </motion.div>
 
-              {/* Right Side - Founder Info */}
-              <motion.div 
-                variants={fadeInUp}
-                className="space-y-8"
-              >
-                {/* Name and Title */}
-                <div>
-                  <motion.h3 
-                    className="text-3xl md:text-4xl font-bold text-white mb-2"
-                    animate={{
-                      textShadow: [
-                        "0 0 10px rgba(255, 255, 255, 0.3)",
-                        "0 0 20px rgba(255, 255, 255, 0.5)",
-                        "0 0 10px rgba(255, 255, 255, 0.3)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    Rajesh Perera
-                  </motion.h3>
-                  <motion.p 
-                    className="text-accent-500 text-lg font-semibold mb-6"
-                    animate={{
-                      opacity: [0.8, 1, 0.8]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    Founder & CEO
-                  </motion.p>
+                      <motion.div 
+                        variants={fadeInUp}
+                        className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                      >
+                        <motion.div 
+                          className="text-xl font-bold text-accent-500 mb-1"
+                          animate={{
+                            textShadow: [
+                              "0 0 5px rgba(229, 90, 43, 0.5)",
+                              "0 0 15px rgba(229, 90, 43, 0.8)",
+                              "0 0 5px rgba(229, 90, 43, 0.5)"
+                            ]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 0.5
+                          }}
+                        >
+                          500+
+                        </motion.div>
+                        <div className="text-xs text-gray-400">Happy Clients</div>
+                      </motion.div>
+                    </motion.div>
+                  </div>
                 </div>
 
-                {/* Bio */}
-                <motion.div 
-                  className="space-y-4 text-gray-300 leading-relaxed"
-                  variants={staggerContainer}
-                >
-                  <motion.p variants={fadeInUp}>
-                    With over 20 years of experience in the hardware and tools industry, Rajesh founded ToolHub 
-                    with a vision to revolutionize how Sri Lankan professionals access quality equipment.
-                  </motion.p>
-                  <motion.p variants={fadeInUp}>
-                    His deep understanding of industrial needs and commitment to excellence has made ToolHub 
-                    the trusted partner for thousands of professionals across the island.
-                  </motion.p>
-                </motion.div>
-
-                {/* Achievements */}
-                <motion.div 
-                  variants={staggerContainer}
-                  className="grid grid-cols-2 gap-6"
-                >
-                  <motion.div 
-                    variants={fadeInUp}
-                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 group hover:bg-white/10 transition-all duration-300"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
-                    <motion.div 
-                      className="text-2xl font-bold text-accent-500 mb-2"
-                      animate={{
-                        textShadow: [
-                          "0 0 5px rgba(229, 90, 43, 0.5)",
-                          "0 0 15px rgba(229, 90, 43, 0.8)",
-                          "0 0 5px rgba(229, 90, 43, 0.5)"
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      20+
-                    </motion.div>
-                    <div className="text-sm text-gray-400">Years Experience</div>
-                  </motion.div>
-
-                  <motion.div 
-                    variants={fadeInUp}
-                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 group hover:bg-white/10 transition-all duration-300"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
-                    <motion.div 
-                      className="text-2xl font-bold text-accent-500 mb-2"
-                      animate={{
-                        textShadow: [
-                          "0 0 5px rgba(229, 90, 43, 0.5)",
-                          "0 0 15px rgba(229, 90, 43, 0.8)",
-                          "0 0 5px rgba(229, 90, 43, 0.5)"
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 0.5
-                      }}
-                    >
-                      500+
-                    </motion.div>
-                    <div className="text-sm text-gray-400">Happy Clients</div>
-                  </motion.div>
-                </motion.div>
-
-                {/* Quote */}
+                {/* Quote Section - Below the main content */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="bg-gradient-to-r from-accent-500/10 to-accent-600/5 rounded-2xl p-6 border-l-4 border-accent-500 relative overflow-hidden"
+                  className="mt-8 pt-8 border-t border-white/10"
                 >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10">
-                    <div className="text-4xl text-accent-500 mb-4">"</div>
-                    <p className="text-gray-300 italic mb-4 leading-relaxed">
-                      Quality tools are not just products – they're the foundation of craftsmanship, 
-                      the enablers of dreams, and the partners in every professional's journey to excellence.
-                    </p>
-                    <div className="text-accent-500 font-semibold">- Rajesh Perera</div>
+                  <div className="bg-gradient-to-r from-accent-500/10 to-accent-600/5 rounded-xl p-6 border-l-4 border-accent-500 relative overflow-hidden">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"
+                    />
+                    <div className="relative z-10">
+                      <div className="text-3xl text-accent-500 mb-3">"</div>
+                      <p className="text-gray-300 italic mb-3 leading-relaxed">
+                        Quality tools are not just products – they're the foundation of craftsmanship, 
+                        the enablers of dreams, and the partners in every professional's journey to excellence.
+                      </p>
+                      <div className="text-accent-500 font-semibold text-sm">- Rajesh Perera</div>
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
