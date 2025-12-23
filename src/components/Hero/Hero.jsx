@@ -120,31 +120,41 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Brand Logos Section */}
+      {/* Brand Logos Section - Moving Carousel */}
       <div className="absolute bottom-0 left-0 right-0 z-10">
-        <div className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-wrap items-center justify-center gap-8 md:gap-12"
-            >
-              {brands.map((brand, index) => (
-                <motion.div
-                  key={brand.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.8 + index * 0.1, duration: 0.5 }}
-                  className="text-white/70 hover:text-white transition-colors cursor-pointer"
-                >
-                  <div className="text-lg md:text-xl font-bold tracking-wider">
-                    {brand.logo}
-                  </div>
-                </motion.div>
+        <div className="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+            className="relative"
+          >
+            {/* Moving Brand Carousel */}
+            <div className="flex animate-scroll">
+              {/* Create multiple sets for seamless loop */}
+              {[...Array(3)].map((_, setIndex) => (
+                <div key={setIndex} className="flex items-center flex-shrink-0">
+                  {brands.map((brand, index) => (
+                    <motion.div
+                      key={`${setIndex}-${brand.name}`}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.8 + index * 0.1, duration: 0.5 }}
+                      className="text-white/70 hover:text-white transition-colors cursor-pointer flex-shrink-0 mx-8 md:mx-16 lg:mx-20"
+                    >
+                      <div className="text-lg md:text-xl font-bold tracking-wider whitespace-nowrap">
+                        {brand.logo}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               ))}
-            </motion.div>
-          </div>
+            </div>
+            
+            {/* Gradient fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black/30 to-transparent pointer-events-none z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black/30 to-transparent pointer-events-none z-10" />
+          </motion.div>
         </div>
       </div>
 
