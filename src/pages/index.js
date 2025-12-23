@@ -288,44 +288,44 @@ export default function Home() {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Left Side - Product Image */}
-                <div className="sm:w-2/5 p-5 relative">
+                <div className="sm:w-2/5 p-4 md:p-5 relative">
                   {/* Scissors Icon */}
-                  <div className="absolute top-3 left-3 text-gray-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-2 md:top-3 left-2 md:left-3 text-gray-400">
+                    <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
                     </svg>
                   </div>
                   
                   {/* Hot Item Badge */}
-                  <div className="absolute top-3 right-3 w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 w-10 h-10 md:w-12 md:h-12 bg-accent-500 rounded-full flex items-center justify-center">
                     <div className="text-white text-xs font-bold text-center leading-tight">
                       HOT<br />ITEM
                     </div>
                   </div>
 
                   {/* Product Image */}
-                  <div className="flex justify-center items-center h-28 mt-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
-                      <div className="text-3xl">🔧</div>
+                  <div className="flex justify-center items-center h-20 md:h-28 mt-4 md:mt-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
+                      <div className="text-2xl md:text-3xl">🔧</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Side - Product Info */}
-                <div className="sm:w-3/5 p-5 flex flex-col justify-center">
+                <div className="sm:w-3/5 p-4 md:p-5 flex flex-col justify-center">
                   {/* Discount Badge */}
                   <div className="flex justify-end mb-2">
-                    <span className="text-accent-500 font-bold text-base">Save 25%</span>
-                    <div className="w-12 h-0.5 bg-accent-500 ml-2 mt-2.5"></div>
+                    <span className="text-accent-500 font-bold text-sm md:text-base">Save 25%</span>
+                    <div className="w-8 md:w-12 h-0.5 bg-accent-500 ml-2 mt-2 md:mt-2.5"></div>
                   </div>
 
                   {/* Product Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">
                     Professional Drill Set 18V Lithium
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
                     Complete drill set with 2 batteries and fast charger
                   </p>
 
@@ -344,44 +344,44 @@ export default function Home() {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Left Side - Product Image */}
-                <div className="sm:w-2/5 p-5 relative">
+                <div className="sm:w-2/5 p-4 md:p-5 relative">
                   {/* Scissors Icon */}
-                  <div className="absolute top-3 left-3 text-gray-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-2 md:top-3 left-2 md:left-3 text-gray-400">
+                    <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
                     </svg>
                   </div>
                   
                   {/* Hot Item Badge */}
-                  <div className="absolute top-3 right-3 w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 w-10 h-10 md:w-12 md:h-12 bg-accent-500 rounded-full flex items-center justify-center">
                     <div className="text-white text-xs font-bold text-center leading-tight">
                       HOT<br />ITEM
                     </div>
                   </div>
 
                   {/* Product Image */}
-                  <div className="flex justify-center items-center h-28 mt-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
-                      <div className="text-3xl">🥽</div>
+                  <div className="flex justify-center items-center h-20 md:h-28 mt-4 md:mt-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
+                      <div className="text-2xl md:text-3xl">🥽</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Side - Product Info */}
-                <div className="sm:w-3/5 p-5 flex flex-col justify-center">
+                <div className="sm:w-3/5 p-4 md:p-5 flex flex-col justify-center">
                   {/* Discount Badge */}
                   <div className="flex justify-end mb-2">
-                    <span className="text-accent-500 font-bold text-base">Save 15%</span>
-                    <div className="w-12 h-0.5 bg-accent-500 ml-2 mt-2.5"></div>
+                    <span className="text-accent-500 font-bold text-sm md:text-base">Save 15%</span>
+                    <div className="w-8 md:w-12 h-0.5 bg-accent-500 ml-2 mt-2 md:mt-2.5"></div>
                   </div>
 
                   {/* Product Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">
                     Auto-Darkening Welding Helmet Pro
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
                     Professional welding helmet with auto-darkening filter
                   </p>
 
@@ -400,44 +400,44 @@ export default function Home() {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Left Side - Product Image */}
-                <div className="sm:w-2/5 p-5 relative">
+                <div className="sm:w-2/5 p-4 md:p-5 relative">
                   {/* Scissors Icon */}
-                  <div className="absolute top-3 left-3 text-gray-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-2 md:top-3 left-2 md:left-3 text-gray-400">
+                    <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
                     </svg>
                   </div>
                   
                   {/* Hot Item Badge */}
-                  <div className="absolute top-3 right-3 w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 w-10 h-10 md:w-12 md:h-12 bg-accent-500 rounded-full flex items-center justify-center">
                     <div className="text-white text-xs font-bold text-center leading-tight">
                       HOT<br />ITEM
                     </div>
                   </div>
 
                   {/* Product Image */}
-                  <div className="flex justify-center items-center h-28 mt-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
-                      <div className="text-3xl">⚙️</div>
+                  <div className="flex justify-center items-center h-20 md:h-28 mt-4 md:mt-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
+                      <div className="text-2xl md:text-3xl">⚙️</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Side - Product Info */}
-                <div className="sm:w-3/5 p-5 flex flex-col justify-center">
+                <div className="sm:w-3/5 p-4 md:p-5 flex flex-col justify-center">
                   {/* Discount Badge */}
                   <div className="flex justify-end mb-2">
-                    <span className="text-accent-500 font-bold text-base">Save 30%</span>
-                    <div className="w-12 h-0.5 bg-accent-500 ml-2 mt-2.5"></div>
+                    <span className="text-accent-500 font-bold text-sm md:text-base">Save 30%</span>
+                    <div className="w-8 md:w-12 h-0.5 bg-accent-500 ml-2 mt-2 md:mt-2.5"></div>
                   </div>
 
                   {/* Product Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">
                     Heavy Duty Angle Grinder 850W
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
                     Professional grade 115mm angle grinder with accessories
                   </p>
 

@@ -120,15 +120,15 @@ export default function ContactPage() {
         </div>
 
         {/* Hero Section - Extended Dark Background */}
-        <section className="relative z-10 min-h-screen flex items-center pt-12 bg-gradient-to-br from-gray-900 to-gray-800">
+        <section className="relative z-10 min-h-screen flex items-center pt-16 md:pt-12 bg-gradient-to-br from-gray-900 to-gray-800">
           <div className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
               {/* Left Side - Content */}
-              <div className="flex items-center justify-center p-8 lg:p-16 relative overflow-hidden">
+              <div className="flex items-center justify-center p-6 md:p-8 lg:p-16 relative overflow-hidden order-1 lg:order-1">
                 {/* Unique Background Pattern */}
                 <div className="absolute inset-0">
-                  {/* Hexagon Pattern */}
-                  <div className="absolute inset-0 opacity-10">
+                  {/* Hexagon Pattern - Reduced opacity on mobile */}
+                  <div className="absolute inset-0 opacity-5 md:opacity-10">
                     <svg className="w-full h-full" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice">
                       <defs>
                         <pattern id="hexagons" x="0" y="0" width="30" height="26" patternUnits="userSpaceOnUse">
@@ -139,11 +139,11 @@ export default function ContactPage() {
                     </svg>
                   </div>
 
-                  {/* Animated Dots */}
-                  {[...Array(12)].map((_, i) => (
+                  {/* Animated Dots - Reduced count on mobile */}
+                  {[...Array(6)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="absolute w-2 h-2 bg-accent-500 rounded-full"
+                      className="absolute w-1.5 h-1.5 md:w-2 md:h-2 bg-accent-500 rounded-full"
                       style={{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="relative z-10 text-white max-w-lg"
+                  className="relative z-10 text-white max-w-lg w-full"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -173,39 +173,39 @@ export default function ContactPage() {
                     transition={{ delay: 0.2, duration: 0.6 }}
                     className="mb-6"
                   >
-                    <span className="inline-block px-4 py-2 bg-accent-500/20 rounded-full text-accent-400 text-sm font-medium mb-4">
+                    <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-accent-500/20 rounded-full text-accent-400 text-sm font-medium mb-4">
                       Get In Touch
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 md:mb-6">
                       Let's Connect &
                       <span className="block text-accent-500">Build Together</span>
                     </h1>
-                    <p className="text-xl text-gray-300 leading-relaxed">
+                    <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
                       Ready to find the perfect tools for your project? Our expert team is here to guide you every step of the way.
                     </p>
                   </motion.div>
 
-                  {/* Quick Stats */}
+                  {/* Quick Stats - Mobile Responsive */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
-                    className="grid grid-cols-2 gap-6"
+                    className="grid grid-cols-2 gap-4 md:gap-6"
                   >
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-500 mb-1">24/7</div>
-                      <div className="text-sm text-gray-400">Support Available</div>
+                      <div className="text-xl md:text-2xl font-bold text-accent-500 mb-1">24/7</div>
+                      <div className="text-xs md:text-sm text-gray-400">Support Available</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-500 mb-1">15min</div>
-                      <div className="text-sm text-gray-400">Response Time</div>
+                      <div className="text-xl md:text-2xl font-bold text-accent-500 mb-1">15min</div>
+                      <div className="text-xs md:text-sm text-gray-400">Response Time</div>
                     </div>
                   </motion.div>
                 </motion.div>
               </div>
 
               {/* Right Side - Contact Methods */}
-              <div className="flex items-center justify-center p-8 lg:p-16 relative">
+              <div className="flex items-center justify-center p-6 md:p-8 lg:p-16 relative order-2 lg:order-2">
                 {/* Subtle Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="w-full h-full" style={{
@@ -220,9 +220,9 @@ export default function ContactPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="relative z-10 w-full max-w-md"
                 >
-                  <h2 className="text-2xl font-bold text-white mb-8 text-center">Choose Your Preferred Way</h2>
+                  <h2 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 text-center">Choose Your Preferred Way</h2>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {contactMethods.map((method, index) => (
                       <motion.div
                         key={method.title}
@@ -230,16 +230,16 @@ export default function ContactPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                         whileHover={{ scale: 1.02, x: 5 }}
-                        className={`p-6 bg-gradient-to-br from-accent-500/20 to-accent-600/10 backdrop-blur-sm rounded-3xl shadow-xl border border-accent-500/30 cursor-pointer group hover:shadow-2xl hover:from-accent-500/30 hover:to-accent-600/20 transition-all duration-500 hover:scale-105`}
+                        className={`p-4 md:p-6 bg-gradient-to-br from-accent-500/20 to-accent-600/10 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-xl border border-accent-500/30 cursor-pointer group hover:shadow-2xl hover:from-accent-500/30 hover:to-accent-600/20 transition-all duration-500 hover:scale-105`}
                       >
-                        <div className="flex items-start space-x-4">
-                          <div className={`w-12 h-12 ${method.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                            <method.icon className="w-6 h-6 text-white" />
+                        <div className="flex items-start space-x-3 md:space-x-4">
+                          <div className={`w-10 h-10 md:w-12 md:h-12 ${method.bgColor} rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                            <method.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold text-white mb-1 group-hover:text-accent-100 transition-colors">{method.title}</h3>
-                            <p className={`font-medium text-accent-300 text-sm mb-1 group-hover:text-accent-200 transition-colors`}>{method.primary}</p>
-                            <p className="text-gray-300 text-sm mb-2 group-hover:text-gray-200 transition-colors">{method.secondary}</p>
+                            <h3 className="font-bold text-white mb-1 group-hover:text-accent-100 transition-colors text-sm md:text-base">{method.title}</h3>
+                            <p className={`font-medium text-accent-300 text-xs md:text-sm mb-1 group-hover:text-accent-200 transition-colors`}>{method.primary}</p>
+                            <p className="text-gray-300 text-xs md:text-sm mb-1 md:mb-2 group-hover:text-gray-200 transition-colors">{method.secondary}</p>
                             <p className="text-gray-400 text-xs group-hover:text-gray-300 transition-colors">{method.description}</p>
                           </div>
                         </div>
@@ -253,24 +253,24 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section - Unique Card-based Layout */}
-        <section className="relative z-10 py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="relative z-10 py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Send Us a Message
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                 Have a specific question or need expert advice? Fill out the form below and we'll get back to you within 15 minutes during business hours.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Form Card */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -279,15 +279,15 @@ export default function ContactPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="lg:col-span-2"
               >
-                <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
-                  {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-500/10 to-transparent rounded-full -translate-y-16 translate-x-16" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent-500/10 to-transparent rounded-full translate-y-12 -translate-x-12" />
+                <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-8 lg:p-12 relative overflow-hidden">
+                  {/* Decorative Elements - Mobile Responsive */}
+                  <div className="absolute top-0 right-0 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-accent-500/10 to-transparent rounded-full -translate-y-10 translate-x-10 md:-translate-y-16 md:translate-x-16" />
+                  <div className="absolute bottom-0 left-0 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-tr from-accent-500/10 to-transparent rounded-full translate-y-8 -translate-x-8 md:translate-y-12 md:-translate-x-12" />
 
                   <div className="relative z-10">
                     {!isSubmitted ? (
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                           <div>
                             <label className="block text-sm font-semibold text-gray-700 mb-2">
                               Full Name *
@@ -298,7 +298,7 @@ export default function ContactPage() {
                               required
                               value={formData.name}
                               onChange={handleInputChange}
-                              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:outline-none transition-colors"
+                              className="w-full px-3 py-2.5 md:px-4 md:py-3 border-2 border-gray-200 rounded-lg md:rounded-xl focus:border-accent-500 focus:outline-none transition-colors text-sm md:text-base"
                               placeholder="John Doe"
                             />
                           </div>
@@ -312,7 +312,7 @@ export default function ContactPage() {
                               name="phone"
                               value={formData.phone}
                               onChange={handleInputChange}
-                              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:outline-none transition-colors"
+                              className="w-full px-3 py-2.5 md:px-4 md:py-3 border-2 border-gray-200 rounded-lg md:rounded-xl focus:border-accent-500 focus:outline-none transition-colors text-sm md:text-base"
                               placeholder="+94 77 123 4567"
                             />
                           </div>
@@ -328,7 +328,7 @@ export default function ContactPage() {
                             required
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:outline-none transition-colors"
+                            className="w-full px-3 py-2.5 md:px-4 md:py-3 border-2 border-gray-200 rounded-lg md:rounded-xl focus:border-accent-500 focus:outline-none transition-colors text-sm md:text-base"
                             placeholder="john@example.com"
                           />
                         </div>
@@ -342,7 +342,7 @@ export default function ContactPage() {
                             required
                             value={formData.subject}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:outline-none transition-colors"
+                            className="w-full px-3 py-2.5 md:px-4 md:py-3 border-2 border-gray-200 rounded-lg md:rounded-xl focus:border-accent-500 focus:outline-none transition-colors text-sm md:text-base"
                           >
                             <option value="">Select a subject</option>
                             <option value="product-inquiry">Product Inquiry</option>
@@ -360,10 +360,10 @@ export default function ContactPage() {
                           <textarea
                             name="message"
                             required
-                            rows={5}
+                            rows={4}
                             value={formData.message}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:outline-none transition-colors resize-vertical"
+                            className="w-full px-3 py-2.5 md:px-4 md:py-3 border-2 border-gray-200 rounded-lg md:rounded-xl focus:border-accent-500 focus:outline-none transition-colors resize-vertical text-sm md:text-base"
                             placeholder="Tell us about your project or how we can help you..."
                           />
                         </div>
@@ -372,9 +372,9 @@ export default function ContactPage() {
                           type="submit"
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full bg-accent-500 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:bg-accent-600 transition-colors flex items-center justify-center space-x-2"
+                          className="w-full bg-accent-500 text-white py-3 px-4 md:py-4 md:px-6 rounded-lg md:rounded-xl font-semibold text-base md:text-lg hover:bg-accent-600 transition-colors flex items-center justify-center space-x-2"
                         >
-                          <PaperAirplaneIcon className="w-5 h-5" />
+                          <PaperAirplaneIcon className="w-4 h-4 md:w-5 md:h-5" />
                           <span>Send Message</span>
                         </motion.button>
                       </form>
@@ -382,30 +382,30 @@ export default function ContactPage() {
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="text-center py-12"
+                        className="text-center py-8 md:py-12"
                       >
-                        <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-                        <p className="text-gray-600">Thank you for contacting us. We'll get back to you within 15 minutes during business hours.</p>
+                        <CheckCircleIcon className="w-12 h-12 md:w-16 md:h-16 text-green-500 mx-auto mb-4" />
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                        <p className="text-sm md:text-base text-gray-600">Thank you for contacting us. We'll get back to you within 15 minutes during business hours.</p>
                       </motion.div>
                     )}
                   </div>
                 </div>
               </motion.div>
 
-              {/* Info Sidebar */}
+              {/* Info Sidebar - Mobile Responsive */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="space-y-6"
+                className="space-y-4 md:space-y-6"
               >
                 {/* Business Hours Card */}
-                <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-6 text-white">
-                  <ClockIcon className="w-8 h-8 mb-4" />
-                  <h3 className="text-lg font-bold mb-3">Business Hours</h3>
-                  <div className="space-y-2 text-sm">
+                <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl md:rounded-2xl p-4 md:p-6 text-white">
+                  <ClockIcon className="w-6 h-6 md:w-8 md:h-8 mb-3 md:mb-4" />
+                  <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3">Business Hours</h3>
+                  <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm">
                     <div className="flex justify-between">
                       <span>Monday - Friday</span>
                       <span>8:00 AM - 6:00 PM</span>
@@ -422,22 +422,22 @@ export default function ContactPage() {
                 </div>
 
                 {/* Quick Contact Card */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                  <PhoneIcon className="w-8 h-8 text-accent-500 mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">Need Immediate Help?</h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
+                  <PhoneIcon className="w-6 h-6 md:w-8 md:h-8 text-accent-500 mb-3 md:mb-4" />
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Need Immediate Help?</h3>
+                  <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                     For urgent inquiries, call us directly and speak with our expert team.
                   </p>
-                  <a href="tel:+94112345678" className="text-accent-500 font-semibold hover:text-accent-600 transition-colors">
+                  <a href="tel:+94112345678" className="text-accent-500 font-semibold hover:text-accent-600 transition-colors text-sm md:text-base">
                     +94 11 234 5678
                   </a>
                 </div>
 
                 {/* Location Card */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                  <MapPinIcon className="w-8 h-8 text-accent-500 mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">Visit Our Showroom</h3>
-                  <p className="text-gray-600 text-sm mb-2">
+                <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
+                  <MapPinIcon className="w-6 h-6 md:w-8 md:h-8 text-accent-500 mb-3 md:mb-4" />
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Visit Our Showroom</h3>
+                  <p className="text-gray-600 text-xs md:text-sm mb-2">
                     Mawanella<br />
                     Sri Lanka
                   </p>
@@ -451,19 +451,19 @@ export default function ContactPage() {
         </section>
 
         {/* Map Section - Unique Interactive Design */}
-        <section className="relative z-10 py-20 bg-gray-900">
+        <section className="relative z-10 py-12 md:py-20 bg-gray-900">
           <div className="max-w-4xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Find Us in Mawanella
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4">
                 Located in Mawanella with easy access and ample parking
               </p>
             </motion.div>
@@ -473,14 +473,14 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-2xl"
+              className="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
             >
-              {/* Map Placeholder - Reduced Size */}
-              <div className="aspect-[2/1] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative">
-                <div className="text-center">
-                  <MapPinIcon className="w-16 h-16 text-accent-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
-                  <p className="text-gray-600">Google Maps integration would be embedded here</p>
+              {/* Map Placeholder - Mobile Responsive */}
+              <div className="aspect-[16/9] md:aspect-[2/1] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative">
+                <div className="text-center px-4">
+                  <MapPinIcon className="w-12 h-12 md:w-16 md:h-16 text-accent-500 mx-auto mb-3 md:mb-4" />
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
+                  <p className="text-sm md:text-base text-gray-600">Google Maps integration would be embedded here</p>
                 </div>
                 
                 {/* Animated Location Pin */}
@@ -495,33 +495,33 @@ export default function ContactPage() {
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="w-6 h-6 bg-accent-500 rounded-full shadow-lg" />
+                  <div className="w-4 h-4 md:w-6 md:h-6 bg-accent-500 rounded-full shadow-lg" />
                 </motion.div>
               </div>
 
-              {/* Location Details */}
-              <div className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Location Details - Mobile Responsive */}
+              <div className="p-6 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <MapPinIcon className="w-6 h-6 text-accent-500" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-accent-100 rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <MapPinIcon className="w-5 h-5 md:w-6 md:h-6 text-accent-500" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Prime Location</h4>
-                    <p className="text-gray-600 text-sm">Easy access from all parts of Sri Lanka</p>
+                    <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Prime Location</h4>
+                    <p className="text-gray-600 text-xs md:text-sm">Easy access from all parts of Sri Lanka</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <BuildingOfficeIcon className="w-6 h-6 text-accent-500" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-accent-100 rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <BuildingOfficeIcon className="w-5 h-5 md:w-6 md:h-6 text-accent-500" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Modern Facility</h4>
-                    <p className="text-gray-600 text-sm">State-of-the-art showroom and warehouse</p>
+                    <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Modern Facility</h4>
+                    <p className="text-gray-600 text-xs md:text-sm">State-of-the-art showroom and warehouse</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <UserGroupIcon className="w-6 h-6 text-accent-500" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-accent-100 rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <UserGroupIcon className="w-5 h-5 md:w-6 md:h-6 text-accent-500" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Expert Team</h4>
-                    <p className="text-gray-600 text-sm">Knowledgeable staff ready to assist</p>
+                    <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Expert Team</h4>
+                    <p className="text-gray-600 text-xs md:text-sm">Knowledgeable staff ready to assist</p>
                   </div>
                 </div>
               </div>

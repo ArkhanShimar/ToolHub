@@ -162,7 +162,7 @@ export default function AboutPage() {
         </div>
 
         {/* Hero Section - Dark Theme with Enhanced Effects */}
-        <section className="relative z-10 min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-20 overflow-hidden">
+        <section className="relative z-10 min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-black via-gray-900 to-black pt-20 overflow-hidden">
           {/* Enhanced Background Effects */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Animated Grid Pattern */}
@@ -174,23 +174,23 @@ export default function AboutPage() {
                     linear-gradient(rgba(229, 90, 43, 0.3) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(229, 90, 43, 0.3) 1px, transparent 1px)
                   `,
-                  backgroundSize: '50px 50px'
+                  backgroundSize: '30px 30px'
                 }}
               />
             </div>
 
-            {/* Floating Particles */}
-            {[...Array(20)].map((_, i) => (
+            {/* Floating Particles - Reduced for mobile */}
+            {[...Array(10)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-2 h-2 bg-accent-500/40 rounded-full"
+                className="absolute w-1 h-1 md:w-2 md:h-2 bg-accent-500/40 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                 }}
                 animate={{
-                  y: [0, -100, 0],
-                  x: [0, Math.random() * 50 - 25, 0],
+                  y: [0, -50, 0],
+                  x: [0, Math.random() * 25 - 12, 0],
                   opacity: [0, 1, 0],
                   scale: [0, 1, 0]
                 }}
@@ -203,9 +203,9 @@ export default function AboutPage() {
               />
             ))}
 
-            {/* Large Geometric Shapes */}
+            {/* Large Geometric Shapes - Responsive sizes */}
             <motion.div
-              className="absolute top-20 left-20 w-64 h-64 border-2 border-accent-500/20 rounded-full"
+              className="absolute top-10 left-4 md:top-20 md:left-20 w-32 h-32 md:w-64 md:h-64 border-2 border-accent-500/20 rounded-full"
               animate={{
                 rotate: [0, 360],
                 scale: [1, 1.2, 1],
@@ -216,10 +216,10 @@ export default function AboutPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent-500/10 to-accent-600/5 rotate-45"
+              className="absolute bottom-10 right-4 md:bottom-20 md:right-20 w-24 h-24 md:w-48 md:h-48 bg-gradient-to-br from-accent-500/10 to-accent-600/5 rotate-45"
               animate={{
                 rotate: [45, 405],
-                y: [0, -30, 0],
+                y: [0, -15, 0],
               }}
               transition={{
                 rotate: { duration: 15, repeat: Infinity, ease: "linear" },
@@ -227,9 +227,9 @@ export default function AboutPage() {
               }}
             />
 
-            {/* Pulsing Rings */}
+            {/* Pulsing Rings - Mobile optimized */}
             <motion.div
-              className="absolute top-1/3 right-1/4 w-96 h-96 border border-white/10 rounded-full"
+              className="absolute top-1/3 right-1/4 w-48 h-48 md:w-96 md:h-96 border border-white/10 rounded-full"
               animate={{
                 scale: [1, 2, 1],
                 opacity: [0.3, 0, 0.3]
@@ -240,25 +240,12 @@ export default function AboutPage() {
                 ease: "easeOut"
               }}
             />
-            <motion.div
-              className="absolute bottom-1/3 left-1/4 w-80 h-80 border border-accent-500/20 rounded-full"
-              animate={{
-                scale: [1, 1.8, 1],
-                opacity: [0.4, 0, 0.4]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: 2
-              }}
-            />
 
-            {/* Moving Light Beams */}
+            {/* Moving Light Beams - Responsive */}
             <motion.div
-              className="absolute top-0 w-full h-2 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
+              className="absolute top-0 w-full h-1 md:h-2 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
               animate={{
-                x: [-200, 1400],
+                x: [-100, window.innerWidth + 100],
               }}
               transition={{
                 duration: 8,
@@ -266,27 +253,15 @@ export default function AboutPage() {
                 ease: "linear"
               }}
             />
-            <motion.div
-              className="absolute bottom-1/4 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-              animate={{
-                x: [1400, -200],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 3
-              }}
-            />
 
-            {/* Glowing Orbs */}
+            {/* Glowing Orbs - Mobile friendly */}
             <motion.div
-              className="absolute top-1/4 left-1/3 w-32 h-32 bg-accent-500/20 rounded-full blur-xl"
+              className="absolute top-1/4 left-1/3 w-16 h-16 md:w-32 md:h-32 bg-accent-500/20 rounded-full blur-xl"
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [0.3, 0.7, 0.3],
-                x: [0, 50, 0],
-                y: [0, -30, 0]
+                x: [0, 25, 0],
+                y: [0, -15, 0]
               }}
               transition={{
                 duration: 8,
@@ -294,45 +269,30 @@ export default function AboutPage() {
                 ease: "easeInOut"
               }}
             />
-            <motion.div
-              className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-white/10 rounded-full blur-lg"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.2, 0.5, 0.2],
-                x: [0, -40, 0],
-                y: [0, 20, 0]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-            />
           </div>
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-7xl mx-auto relative z-10 w-full">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
               className="text-center"
             >
-              {/* Main Title with Advanced Animation */}
+              {/* Main Title with Advanced Animation - Mobile Responsive */}
               <motion.div
                 variants={fadeInUp}
-                className="relative mb-8"
+                className="relative mb-6 md:mb-8"
               >
                 <motion.h1 
-                  className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-none relative"
-                  whileHover={{ scale: 1.05 }}
+                  className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white leading-none relative px-4"
+                  whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <span className="relative inline-block">
                     ABOUT
-                    {/* Text Glow Effect */}
+                    {/* Text Glow Effect - Responsive */}
                     <motion.div
-                      className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
+                      className="absolute inset-0 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
                       animate={{
                         opacity: [0.3, 0.6, 0.3]
                       }}
@@ -349,14 +309,14 @@ export default function AboutPage() {
                   <span className="relative inline-block">
                     TOOLHUB
                     <motion.div
-                      className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-accent-500 to-accent-600 shadow-lg shadow-accent-500/50"
+                      className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-1 md:h-2 bg-gradient-to-r from-accent-500 to-accent-600 shadow-lg shadow-accent-500/50"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ delay: 0.5, duration: 0.8 }}
                     />
-                    {/* Text Glow Effect */}
+                    {/* Text Glow Effect - Responsive */}
                     <motion.div
-                      className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
+                      className="absolute inset-0 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-accent-500 opacity-50 blur-sm"
                       animate={{
                         opacity: [0.3, 0.6, 0.3]
                       }}
@@ -373,10 +333,10 @@ export default function AboutPage() {
                 </motion.h1>
               </motion.div>
 
-              {/* Subtitle with Enhanced Effects */}
+              {/* Subtitle with Enhanced Effects - Mobile Responsive */}
               <motion.p 
                 variants={fadeInUp}
-                className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed relative"
+                className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed relative px-4"
               >
                 <motion.span
                   className="relative z-10"
@@ -399,20 +359,20 @@ export default function AboutPage() {
                 </motion.span>
               </motion.p>
 
-              {/* Enhanced Animated Stats */}
+              {/* Enhanced Animated Stats - Mobile Grid */}
               <motion.div
                 variants={staggerContainer}
-                className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
+                className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-12 md:mb-16 px-4"
               >
                 {stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     variants={fadeInUp}
                     className="group relative"
-                    whileHover={{ y: -10, scale: 1.05 }}
+                    whileHover={{ y: -5, scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 relative overflow-hidden">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-3 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 relative overflow-hidden">
                       {/* Animated Background */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-accent-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -436,11 +396,11 @@ export default function AboutPage() {
                           ease: "linear"
                         }}
                       >
-                        <stat.icon className="w-8 h-8 text-accent-500 mx-auto mb-3 group-hover:scale-110 transition-transform relative z-10" />
+                        <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-accent-500 mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform relative z-10" />
                       </motion.div>
                       
                       <motion.div 
-                        className="text-3xl font-bold text-white mb-2 relative z-10"
+                        className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 relative z-10"
                         animate={{
                           textShadow: [
                             "0 0 5px rgba(255, 255, 255, 0.5)",
@@ -457,12 +417,12 @@ export default function AboutPage() {
                       >
                         {stat.number}
                       </motion.div>
-                      <div className="text-sm text-gray-300 font-medium relative z-10">{stat.label}</div>
+                      <div className="text-xs md:text-sm text-gray-300 font-medium relative z-10 leading-tight">{stat.label}</div>
                     </div>
                     
                     {/* Enhanced Hover Glow Effect */}
                     <motion.div 
-                      className="absolute inset-0 bg-gradient-to-r from-accent-500/30 to-accent-600/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"
+                      className="absolute inset-0 bg-gradient-to-r from-accent-500/30 to-accent-600/30 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"
                       animate={{
                         scale: [1, 1.2, 1],
                       }}
@@ -480,20 +440,20 @@ export default function AboutPage() {
         </section>
 
         {/* Our Story Section - Light Theme */}
-        <section className="relative z-10 py-20 bg-gray-200">
+        <section className="relative z-10 py-12 md:py-20 bg-gray-200">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center"
             >
               {/* Left Side - Story Content */}
-              <motion.div variants={fadeInUp} className="space-y-8">
+              <motion.div variants={fadeInUp} className="space-y-6 md:space-y-8">
                 <div>
                   <motion.h2 
-                    className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6"
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: 50 }}
                     transition={{ duration: 0.8 }}
@@ -501,7 +461,7 @@ export default function AboutPage() {
                     Our Story
                   </motion.h2>
                   <motion.div
-                    className="w-24 h-1 bg-accent-500 mb-8"
+                    className="w-16 md:w-24 h-1 bg-accent-500 mb-6 md:mb-8"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
@@ -510,7 +470,7 @@ export default function AboutPage() {
 
                 <motion.p 
                   variants={fadeInUp}
-                  className="text-lg text-gray-600 leading-relaxed"
+                  className="text-base md:text-lg text-gray-600 leading-relaxed"
                 >
                   What started as a small hardware store in Colombo has grown into Sri Lanka's most trusted 
                   source for professional tools and equipment. Our journey began with a simple mission: 
@@ -519,7 +479,7 @@ export default function AboutPage() {
 
                 <motion.p 
                   variants={fadeInUp}
-                  className="text-lg text-gray-600 leading-relaxed"
+                  className="text-base md:text-lg text-gray-600 leading-relaxed"
                 >
                   Today, we serve over 500 satisfied customers across the island, from small workshops to 
                   large industrial complexes. Our commitment to quality, reliability, and exceptional 
@@ -529,10 +489,10 @@ export default function AboutPage() {
                 {/* Mission Statement */}
                 <motion.div
                   variants={fadeInUp}
-                  className="bg-white rounded-2xl p-8 border-l-4 border-accent-500 shadow-lg"
+                  className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 border-l-4 border-accent-500 shadow-lg"
                 >
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                  <p className="text-gray-700 italic">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Our Mission</h3>
+                  <p className="text-sm md:text-base text-gray-700 italic leading-relaxed">
                     "To empower Sri Lankan industries with professional-grade tools and equipment, 
                     backed by expert knowledge and unwavering commitment to customer success."
                   </p>
@@ -542,15 +502,15 @@ export default function AboutPage() {
               {/* Right Side - Interactive Visual */}
               <motion.div 
                 variants={fadeInUp}
-                className="relative"
+                className="relative mt-8 lg:mt-0"
               >
-                <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-8 shadow-2xl">
+                <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-2xl">
                   {/* Floating Tool Icons */}
-                  <div className="grid grid-cols-3 gap-6 mb-8">
+                  <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-8">
                     {['🔧', '⚙️', '🔨', '🔩', '⚡', '🛠️'].map((icon, index) => (
                       <motion.div
                         key={index}
-                        className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-lg"
+                        className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center text-lg md:text-2xl shadow-lg"
                         animate={{
                           y: [0, -10, 0],
                           rotate: [0, 5, 0]
@@ -570,7 +530,7 @@ export default function AboutPage() {
 
                   {/* Central Logo Area */}
                   <motion.div
-                    className="bg-accent-500 rounded-2xl p-8 text-center text-white relative overflow-hidden"
+                    className="bg-accent-500 rounded-xl md:rounded-2xl p-6 md:p-8 text-center text-white relative overflow-hidden"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -585,14 +545,14 @@ export default function AboutPage() {
                         repeatDelay: 3
                       }}
                     />
-                    <h3 className="text-2xl font-bold mb-2 relative z-10">ToolHub</h3>
-                    <p className="text-accent-100 relative z-10">Professional Grade Since 2008</p>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 relative z-10">ToolHub</h3>
+                    <p className="text-accent-100 relative z-10 text-sm md:text-base">Professional Grade Since 2008</p>
                   </motion.div>
                 </div>
 
-                {/* Decorative Elements */}
+                {/* Decorative Elements - Mobile Responsive */}
                 <motion.div
-                  className="absolute -top-4 -right-4 w-24 h-24 bg-accent-500/20 rounded-full"
+                  className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 bg-accent-500/20 rounded-full"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.3, 0.6, 0.3]
@@ -604,7 +564,7 @@ export default function AboutPage() {
                   }}
                 />
                 <motion.div
-                  className="absolute -bottom-6 -left-6 w-32 h-32 border-4 border-accent-500/30 rounded-full"
+                  className="absolute -bottom-3 -left-3 md:-bottom-6 md:-left-6 w-20 h-20 md:w-32 md:h-32 border-2 md:border-4 border-accent-500/30 rounded-full"
                   animate={{
                     rotate: [0, 360]
                   }}
@@ -620,24 +580,24 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section - Dark Theme */}
-        <section className="relative z-10 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
               <motion.h2 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl font-bold text-white mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
               >
                 Our Core Values
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl text-gray-300 max-w-3xl mx-auto"
+                className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
               >
                 The principles that guide everything we do and every relationship we build
               </motion.p>
@@ -645,7 +605,7 @@ export default function AboutPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
             >
               {values.map((value, index) => (
                 <motion.div
@@ -655,7 +615,7 @@ export default function AboutPage() {
                   whileHover={{ y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden">
                     {/* Background Gradient */}
                     <motion.div
                       className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -663,16 +623,16 @@ export default function AboutPage() {
                     
                     {/* Icon */}
                     <motion.div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <value.icon className="w-8 h-8 text-white" />
+                      <value.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-gray-100 transition-colors">
                       {value.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
                       {value.description}
                     </p>
 
@@ -786,12 +746,12 @@ export default function AboutPage() {
         </section>
 
         {/* Meet Our Founder Section - Dark Theme */}
-        <section className="relative z-10 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
           {/* Enhanced Background Effects */}
           <div className="absolute inset-0 pointer-events-none">
-            {/* Animated Constellation Pattern */}
+            {/* Animated Constellation Pattern - Reduced for mobile */}
             <div className="absolute inset-0 opacity-10">
-              {[...Array(30)].map((_, i) => (
+              {[...Array(15)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-white rounded-full"
@@ -813,9 +773,9 @@ export default function AboutPage() {
               ))}
             </div>
 
-            {/* Floating Geometric Elements */}
+            {/* Floating Geometric Elements - Mobile Responsive */}
             <motion.div
-              className="absolute top-20 left-20 w-40 h-40 border border-accent-500/20 rotate-45"
+              className="absolute top-10 left-4 md:top-20 md:left-20 w-24 h-24 md:w-40 md:h-40 border border-accent-500/20 rotate-45"
               animate={{
                 rotate: [45, 405],
                 scale: [1, 1.2, 1],
@@ -828,11 +788,11 @@ export default function AboutPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-white/5 to-white/10 rounded-full blur-lg"
+              className="absolute bottom-10 right-4 md:bottom-20 md:right-20 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-white/5 to-white/10 rounded-full blur-lg"
               animate={{
                 scale: [1, 1.8, 1],
-                x: [0, -50, 0],
-                y: [0, 30, 0]
+                x: [0, -25, 0],
+                y: [0, 15, 0]
               }}
               transition={{
                 duration: 12,
@@ -841,9 +801,9 @@ export default function AboutPage() {
               }}
             />
 
-            {/* Energy Waves */}
+            {/* Energy Waves - Mobile Responsive */}
             <motion.div
-              className="absolute top-1/3 w-full h-1 bg-gradient-to-r from-transparent via-accent-500/40 to-transparent"
+              className="absolute top-1/3 w-full h-0.5 md:h-1 bg-gradient-to-r from-transparent via-accent-500/40 to-transparent"
               animate={{
                 x: [-300, 1500],
                 opacity: [0, 1, 0]
@@ -854,19 +814,6 @@ export default function AboutPage() {
                 ease: "easeInOut"
               }}
             />
-            <motion.div
-              className="absolute bottom-1/3 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-              animate={{
-                x: [1500, -300],
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 3
-              }}
-            />
           </div>
 
           <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -875,15 +822,15 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
               <motion.h2 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl font-bold text-white mb-6 relative"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 relative"
               >
                 <span className="relative z-10">Meet Our Founder</span>
                 <motion.div
-                  className="absolute inset-0 text-4xl md:text-5xl font-bold text-accent-500 opacity-30 blur-sm"
+                  className="absolute inset-0 text-3xl md:text-4xl lg:text-5xl font-bold text-accent-500 opacity-30 blur-sm"
                   animate={{
                     opacity: [0.2, 0.5, 0.2]
                   }}
@@ -898,7 +845,7 @@ export default function AboutPage() {
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl text-gray-300 max-w-3xl mx-auto"
+                className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
               >
                 The visionary behind ToolHub's commitment to excellence and innovation
               </motion.p>
@@ -942,16 +889,16 @@ export default function AboutPage() {
                   }}
                 />
 
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                  {/* Left Side - Small Profile Image */}
+                <div className="relative z-10 flex flex-col items-center gap-6 md:gap-8">
+                  {/* Profile Image - Centered on mobile */}
                   <motion.div 
                     className="flex-shrink-0"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className="relative">
-                      {/* Profile Image Container - Much Smaller */}
-                      <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center text-gray-400 shadow-xl border border-white/20 relative overflow-hidden">
+                      {/* Profile Image Container */}
+                      <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center text-gray-400 shadow-xl border border-white/20 relative overflow-hidden mx-auto">
                         <motion.div
                           className="text-center"
                           animate={{
@@ -963,7 +910,7 @@ export default function AboutPage() {
                             ease: "easeInOut"
                           }}
                         >
-                          <div className="text-4xl mb-2">👤</div>
+                          <div className="text-3xl md:text-4xl mb-2">👤</div>
                           <div className="text-xs">Founder</div>
                         </motion.div>
                         
@@ -988,8 +935,8 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
 
-                  {/* Right Side - Founder Info */}
-                  <div className="flex-1 text-center md:text-left space-y-6">
+                  {/* Founder Info - Centered on mobile */}
+                  <div className="flex-1 text-center space-y-4 md:space-y-6">
                     {/* Name and Title */}
                     <div>
                       <motion.h3 
@@ -1026,25 +973,25 @@ export default function AboutPage() {
 
                     {/* Bio */}
                     <motion.p 
-                      className="text-gray-300 leading-relaxed"
+                      className="text-sm md:text-base text-gray-300 leading-relaxed px-4"
                       variants={fadeInUp}
                     >
                       With over 20 years of experience in the hardware and tools industry, Rajesh founded ToolHub 
                       with a vision to revolutionize how Sri Lankan professionals access quality equipment.
                     </motion.p>
 
-                    {/* Achievements Row */}
+                    {/* Achievements Row - Mobile Responsive */}
                     <motion.div 
                       variants={staggerContainer}
-                      className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+                      className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
                       <motion.div 
                         variants={fadeInUp}
-                        className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
+                        className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 md:px-6 md:py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
                         whileHover={{ scale: 1.05, y: -2 }}
                       >
                         <motion.div 
-                          className="text-xl font-bold text-accent-500 mb-1"
+                          className="text-lg md:text-xl font-bold text-accent-500 mb-1"
                           animate={{
                             textShadow: [
                               "0 0 5px rgba(229, 90, 43, 0.5)",
@@ -1065,11 +1012,11 @@ export default function AboutPage() {
 
                       <motion.div 
                         variants={fadeInUp}
-                        className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
+                        className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 md:px-6 md:py-4 border border-white/20 group/stat hover:bg-white/20 transition-all duration-300"
                         whileHover={{ scale: 1.05, y: -2 }}
                       >
                         <motion.div 
-                          className="text-xl font-bold text-accent-500 mb-1"
+                          className="text-lg md:text-xl font-bold text-accent-500 mb-1"
                           animate={{
                             textShadow: [
                               "0 0 5px rgba(229, 90, 43, 0.5)",
@@ -1092,18 +1039,18 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Quote Section - Below the main content */}
+                {/* Quote Section - Mobile Responsive */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="mt-8 pt-8 border-t border-white/10"
+                  className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-white/10"
                 >
-                  <div className="bg-gradient-to-r from-accent-500/10 to-accent-600/5 rounded-xl p-6 border-l-4 border-accent-500 relative overflow-hidden">
+                  <div className="bg-gradient-to-r from-accent-500/10 to-accent-600/5 rounded-xl p-4 md:p-6 border-l-4 border-accent-500 relative overflow-hidden">
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"
                     />
                     <div className="relative z-10">
-                      <div className="text-3xl text-accent-500 mb-3">"</div>
-                      <p className="text-gray-300 italic mb-3 leading-relaxed">
+                      <div className="text-2xl md:text-3xl text-accent-500 mb-2 md:mb-3">"</div>
+                      <p className="text-sm md:text-base text-gray-300 italic mb-2 md:mb-3 leading-relaxed">
                         Quality tools are not just products – they're the foundation of craftsmanship, 
                         the enablers of dreams, and the partners in every professional's journey to excellence.
                       </p>
@@ -1117,7 +1064,7 @@ export default function AboutPage() {
         </section>
 
         {/* Call to Action - Light Theme */}
-        <section className="relative z-10 py-20 bg-gray-200 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-20 bg-gray-200 overflow-hidden">
           {/* Background Animation */}
           <div className="absolute inset-0 pointer-events-none">
             <motion.div
@@ -1132,7 +1079,7 @@ export default function AboutPage() {
               }}
               style={{
                 backgroundImage: "radial-gradient(circle, rgba(229, 90, 43, 0.5) 1px, transparent 1px)",
-                backgroundSize: "50px 50px"
+                backgroundSize: "30px 30px"
               }}
             />
           </div>
@@ -1146,29 +1093,29 @@ export default function AboutPage() {
             >
               <motion.h2 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900"
               >
                 Ready to Experience Excellence?
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl mb-8 text-gray-600"
+                className="text-lg md:text-xl mb-6 md:mb-8 text-gray-600 px-4"
               >
                 Join thousands of professionals who trust ToolHub for their equipment needs
               </motion.p>
               <motion.div
                 variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col sm:flex-row gap-4 justify-center px-4"
               >
                 <motion.button
-                  className="px-8 py-4 bg-accent-500 text-white rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:bg-accent-600"
+                  className="px-6 py-3 md:px-8 md:py-4 bg-accent-500 text-white rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all hover:bg-accent-600"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Browse Our Products
                 </motion.button>
                 <motion.button
-                  className="px-8 py-4 border-2 border-accent-500 text-accent-500 rounded-full font-bold text-lg hover:bg-accent-500 hover:text-white transition-all"
+                  className="px-6 py-3 md:px-8 md:py-4 border-2 border-accent-500 text-accent-500 rounded-full font-bold text-base md:text-lg hover:bg-accent-500 hover:text-white transition-all"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
