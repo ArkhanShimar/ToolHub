@@ -114,36 +114,36 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-16 right-4 md:bottom-24 md:right-6 z-50 w-[calc(100vw-2rem)] max-w-sm md:w-80 h-80 md:h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden chat-widget"
+            className="fixed bottom-16 right-4 md:bottom-24 md:right-6 z-50 w-[calc(100vw-2rem)] max-w-xs md:max-w-sm md:w-80 h-72 md:h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden chat-widget"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header - Mobile Responsive */}
-            <div className="bg-accent-500 text-white p-3 md:p-4 flex items-center justify-between">
+            <div className="bg-accent-500 text-white p-2.5 md:p-4 flex items-center justify-between">
               <div>
-                <h3 className="font-semibold text-sm md:text-base">Live Support</h3>
+                <h3 className="font-semibold text-xs md:text-base">Live Support</h3>
                 <p className="text-xs md:text-sm text-accent-100">We're here to help!</p>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-green-400 rounded-full"></div>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full"></div>
                 <button
                   onClick={handleCloseChat}
                   className="p-1 hover:bg-accent-600 rounded-full transition-colors"
                   aria-label="Close chat"
                 >
-                  <XMarkIcon className="w-4 h-4 md:w-5 md:h-5" />
+                  <XMarkIcon className="w-3.5 h-3.5 md:w-5 md:h-5" />
                 </button>
               </div>
             </div>
 
             {/* Messages - Mobile Responsive */}
-            <div className="flex-1 p-3 md:p-4 overflow-y-auto space-y-2 md:space-y-3">
+            <div className="flex-1 p-2.5 md:p-4 overflow-y-auto space-y-2">
               {messages.map((msg) => (
                 <div
                   key={msg.id}
                   className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] md:max-w-xs px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg text-xs md:text-sm ${
+                    className={`max-w-[85%] md:max-w-xs px-2 py-1.5 md:px-3 md:py-2 rounded-lg text-xs md:text-sm ${
                       msg.sender === 'user'
                         ? 'bg-accent-500 text-white'
                         : 'bg-gray-100 text-gray-800'
@@ -156,21 +156,21 @@ export default function ChatWidget() {
             </div>
 
             {/* Input - Mobile Responsive */}
-            <form onSubmit={handleSendMessage} className="p-3 md:p-4 border-t border-gray-200">
-              <div className="flex gap-2">
+            <form onSubmit={handleSendMessage} className="p-2.5 md:p-4 border-t border-gray-200">
+              <div className="flex gap-1.5 md:gap-2">
                 <input
                   type="text"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 px-2.5 py-1.5 md:px-3 md:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent text-xs md:text-sm"
+                  className="flex-1 px-2 py-1.5 md:px-3 md:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent text-xs md:text-sm"
                 />
                 <button
                   type="submit"
-                  className="px-2.5 py-1.5 md:px-3 md:py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors flex items-center justify-center"
+                  className="px-2 py-1.5 md:px-3 md:py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors flex items-center justify-center"
                   aria-label="Send message"
                 >
-                  <PaperAirplaneIcon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <PaperAirplaneIcon className="w-3 h-3 md:w-4 md:h-4" />
                 </button>
               </div>
             </form>

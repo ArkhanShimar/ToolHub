@@ -704,12 +704,12 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8 md:mb-10"
           >
             {/* Professional Drill Set */}
             <motion.div 
               variants={fadeInUp} 
-              className="group rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              className="group rounded-lg md:rounded-xl p-3 md:p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
               style={{
                 background: `
                   linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%),
@@ -729,21 +729,21 @@ export default function Home() {
               </div>
               
               <div className="relative z-10">
-                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-lg mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-md md:rounded-lg mb-2 md:mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
                   <div className="text-center text-accent-600">
-                    <div className="text-3xl mb-2">🔧</div>
+                    <div className="text-xl md:text-3xl mb-1 md:mb-2">🔧</div>
                     <p className="text-xs font-medium">Power Drill</p>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">Professional Drill Set 18V</h3>
-                <div className="space-y-1 text-xs text-gray-600 mb-4">
+                <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-accent-600 transition-colors">Professional Drill Set 18V</h3>
+                <div className="space-y-0.5 md:space-y-1 text-xs text-gray-600 mb-2 md:mb-4">
                   <p>Voltage: 18V Lithium-Ion</p>
                   <p>Max Torque: 65 Nm</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-gray-500">Starting at</p>
-                    <p className="text-lg font-bold text-gray-900">LKR 22,500</p>
+                    <p className="text-sm md:text-lg font-bold text-gray-900">LKR 22,500</p>
                   </div>
                 </div>
               </div>
@@ -752,7 +752,7 @@ export default function Home() {
             {/* Angle Grinder */}
             <motion.div 
               variants={fadeInUp} 
-              className="group rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              className="group rounded-lg md:rounded-xl p-3 md:p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
               style={{
                 background: `
                   linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%),
@@ -772,21 +772,21 @@ export default function Home() {
               </div>
               
               <div className="relative z-10">
-                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-lg mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-md md:rounded-lg mb-2 md:mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
                   <div className="text-center text-accent-600">
-                    <div className="text-3xl mb-2">⚙️</div>
+                    <div className="text-xl md:text-3xl mb-1 md:mb-2">⚙️</div>
                     <p className="text-xs font-medium">Angle Grinder</p>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">Angle Grinder 115mm</h3>
-                <div className="space-y-1 text-xs text-gray-600 mb-4">
+                <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-accent-600 transition-colors">Angle Grinder 115mm</h3>
+                <div className="space-y-0.5 md:space-y-1 text-xs text-gray-600 mb-2 md:mb-4">
                   <p>Disc Size: 115mm</p>
                   <p>Power: 850W Motor</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-gray-500">Starting at</p>
-                    <p className="text-lg font-bold text-gray-900">LKR 18,000</p>
+                    <p className="text-sm md:text-lg font-bold text-gray-900">LKR 18,000</p>
                   </div>
                 </div>
               </div>
@@ -795,7 +795,7 @@ export default function Home() {
             {/* Socket Set */}
             <motion.div 
               variants={fadeInUp} 
-              className="group rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              className="group rounded-lg md:rounded-xl p-3 md:p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
               style={{
                 background: `
                   linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%),
@@ -815,21 +815,64 @@ export default function Home() {
               </div>
               
               <div className="relative z-10">
-                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-lg mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-md md:rounded-lg mb-2 md:mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
                   <div className="text-center text-accent-600">
-                    <div className="text-3xl mb-2">🔩</div>
+                    <div className="text-xl md:text-3xl mb-1 md:mb-2">🔩</div>
                     <p className="text-xs font-medium">Socket Set</p>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">Socket Set 42 Pieces</h3>
-                <div className="space-y-1 text-xs text-gray-600 mb-4">
+                <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-accent-600 transition-colors">Socket Set 42 Pieces</h3>
+                <div className="space-y-0.5 md:space-y-1 text-xs text-gray-600 mb-2 md:mb-4">
                   <p>Pieces: 42 Complete Set</p>
                   <p>Material: Chrome Vanadium</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-gray-500">Starting at</p>
-                    <p className="text-lg font-bold text-gray-900">LKR 10,800</p>
+                    <p className="text-sm md:text-lg font-bold text-gray-900">LKR 10,800</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Welding Helmet */}
+            <motion.div 
+              variants={fadeInUp} 
+              className="group rounded-lg md:rounded-xl p-3 md:p-5 shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              style={{
+                background: `
+                  linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%),
+                  linear-gradient(90deg, transparent 0%, rgba(229, 90, 43, 0.05) 50%, transparent 100%)
+                `,
+                backgroundSize: '100% 100%, 200% 100%',
+                animation: 'shimmer 4s ease-in-out infinite 3s'
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 10px 40px rgba(229, 90, 43, 0.15)'
+              }}
+            >
+              {/* Shimmer Overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="aspect-[4/3] bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-md md:rounded-lg mb-2 md:mb-4 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
+                  <div className="text-center text-accent-600">
+                    <div className="text-xl md:text-3xl mb-1 md:mb-2">🥽</div>
+                    <p className="text-xs font-medium">Welding Helmet</p>
+                  </div>
+                </div>
+                <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-accent-600 transition-colors">Auto-Darkening Welding Helmet</h3>
+                <div className="space-y-0.5 md:space-y-1 text-xs text-gray-600 mb-2 md:mb-4">
+                  <p>Type: Auto-Darkening</p>
+                  <p>Protection: UV/IR Filter</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-gray-500">Starting at</p>
+                    <p className="text-sm md:text-lg font-bold text-gray-900">LKR 35,000</p>
                   </div>
                 </div>
               </div>

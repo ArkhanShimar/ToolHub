@@ -245,6 +245,194 @@ export default function ProductDetails() {
         ];
         
         setRelatedProducts(mockRelatedProducts);
+      } else if (id === 'makita-ga4530r-angle-grinder-115mm') {
+        // Second detailed product - Makita Angle Grinder
+        const hardcodedProduct = {
+          _id: 'makita-ga4530r-angle-grinder-115mm',
+          name: 'Makita GA4530R Angle Grinder 115mm Professional',
+          slug: 'makita-ga4530r-angle-grinder-115mm',
+          sku: 'MKT-GA4530R-001',
+          brand: 'Makita',
+          price: 22000,
+          salePrice: 18700,
+          stockQty: 8,
+          unit: 'pcs',
+          images: [
+            '/assets/products/makita-grinder-main.jpg',
+            '/assets/products/makita-grinder-side.jpg',
+            '/assets/products/makita-grinder-accessories.jpg',
+            '/assets/products/makita-grinder-disc.jpg'
+          ],
+          description: 'The Makita GA4530R is a compact and powerful 115mm angle grinder designed for professional cutting and grinding applications. Features a high-performance motor with excellent power-to-weight ratio and superior durability.',
+          longDescription: 'This professional-grade angle grinder delivers exceptional performance in a compact design. The powerful 720W motor provides consistent performance under load, while the ergonomic design ensures comfortable operation during extended use. Perfect for metal fabrication, construction, and general grinding tasks.',
+          categoryId: { _id: 'cat1', name: 'Power Tools', slug: 'power-tools' },
+          subcategoryId: { _id: 'subcat2', name: 'Angle Grinders', slug: 'angle-grinders' },
+          
+          // Dynamic attributes
+          attributes: [
+            { name: 'Power', value: '720', unit: 'W' },
+            { name: 'Disc Diameter', value: '115', unit: 'mm' },
+            { name: 'Spindle Thread', value: 'M14', unit: '' },
+            { name: 'No-Load Speed', value: '11000', unit: 'rpm' },
+            { name: 'Weight', value: '1.4', unit: 'kg' },
+            { name: 'Cord Length', value: '2.5', unit: 'm' },
+            { name: 'Motor Type', value: 'Universal Motor', unit: '' },
+            { name: 'Side Handle', value: 'Included', unit: '' },
+            { name: 'Wheel Guard', value: 'Adjustable', unit: '' },
+            { name: 'Spindle Lock', value: 'Yes', unit: '' },
+            { name: 'Soft Start', value: 'No', unit: '' },
+            { name: 'Warranty', value: '3 Years', unit: '' }
+          ],
+          
+          // Related products and spare parts
+          relatedProducts: [
+            'makita-9557pb-angle-grinder',
+            'makita-dga452z-cordless-grinder',
+            'makita-ga5030r-angle-grinder-125mm',
+            'makita-9558pb-angle-grinder'
+          ],
+          
+          spareparts: [
+            'makita-cutting-disc-115mm-metal',
+            'makita-grinding-disc-115mm',
+            'makita-diamond-disc-115mm',
+            'makita-side-handle-grinder',
+            'makita-wheel-guard-115mm',
+            'makita-carbon-brush-set'
+          ],
+          
+          variants: [
+            {
+              sku: 'MKT-GA4530R-STD',
+              name: 'Standard Kit',
+              attributes: [{ name: 'Includes', value: 'Grinder + Side Handle + Guard' }],
+              stockQty: 8,
+              extraPrice: 0
+            },
+            {
+              sku: 'MKT-GA4530R-KIT', 
+              name: 'Complete Kit',
+              attributes: [{ name: 'Includes', value: 'Grinder + 5 Discs + Case + Accessories' }],
+              stockQty: 3,
+              extraPrice: 5500
+            }
+          ],
+          
+          tags: ['angle-grinder', 'cutting', 'grinding', 'professional', '115mm', 'makita'],
+          rating: 4.5,
+          reviewCount: 32,
+          popularity: 88,
+          isActive: true,
+          isFeatured: true,
+          createdAt: new Date('2024-02-10'),
+          updatedAt: new Date('2024-12-15')
+        };
+        
+        setProduct(hardcodedProduct);
+        
+        // Load related products for angle grinder
+        const mockRelatedProducts = [
+          // Related Angle Grinders (4 items)
+          {
+            _id: 'makita-9557pb-angle-grinder',
+            name: 'Makita 9557PB Angle Grinder 115mm',
+            slug: 'makita-9557pb-angle-grinder',
+            brand: 'Makita',
+            price: 18500,
+            stockQty: 12,
+            images: ['/assets/products/makita-9557pb.jpg'],
+            rating: 4.3,
+            categoryId: { name: 'Power Tools' }
+          },
+          {
+            _id: 'makita-dga452z-cordless-grinder',
+            name: 'Makita DGA452Z Cordless Angle Grinder 115mm',
+            slug: 'makita-dga452z-cordless-grinder',
+            brand: 'Makita',
+            price: 28000,
+            salePrice: 25200,
+            stockQty: 6,
+            images: ['/assets/products/makita-cordless-grinder.jpg'],
+            rating: 4.7,
+            categoryId: { name: 'Power Tools' }
+          },
+          {
+            _id: 'makita-ga5030r-angle-grinder-125mm',
+            name: 'Makita GA5030R Angle Grinder 125mm',
+            slug: 'makita-ga5030r-angle-grinder-125mm',
+            brand: 'Makita',
+            price: 24000,
+            stockQty: 9,
+            images: ['/assets/products/makita-125mm-grinder.jpg'],
+            rating: 4.4,
+            categoryId: { name: 'Power Tools' }
+          },
+          {
+            _id: 'makita-9558pb-angle-grinder',
+            name: 'Makita 9558PB Angle Grinder 125mm',
+            slug: 'makita-9558pb-angle-grinder',
+            brand: 'Makita',
+            price: 21000,
+            stockQty: 7,
+            images: ['/assets/products/makita-9558pb.jpg'],
+            rating: 4.2,
+            categoryId: { name: 'Power Tools' }
+          },
+          
+          // Spare Parts & Accessories (4 items)
+          {
+            _id: 'makita-cutting-disc-115mm-metal',
+            name: 'Makita Metal Cutting Disc 115mm (Pack of 5)',
+            slug: 'makita-cutting-disc-115mm-metal',
+            brand: 'Makita',
+            price: 3500,
+            salePrice: 3150,
+            stockQty: 45,
+            images: ['/assets/products/makita-cutting-disc.jpg'],
+            rating: 4.8,
+            categoryId: { name: 'Spare Parts' },
+            isSpare: true
+          },
+          {
+            _id: 'makita-grinding-disc-115mm',
+            name: 'Makita Grinding Disc 115mm (Pack of 5)',
+            slug: 'makita-grinding-disc-115mm',
+            brand: 'Makita',
+            price: 4000,
+            stockQty: 38,
+            images: ['/assets/products/makita-grinding-disc.jpg'],
+            rating: 4.6,
+            categoryId: { name: 'Spare Parts' },
+            isSpare: true
+          },
+          {
+            _id: 'makita-diamond-disc-115mm',
+            name: 'Makita Diamond Cutting Disc 115mm',
+            slug: 'makita-diamond-disc-115mm',
+            brand: 'Makita',
+            price: 8500,
+            salePrice: 7650,
+            stockQty: 22,
+            images: ['/assets/products/makita-diamond-disc.jpg'],
+            rating: 4.9,
+            categoryId: { name: 'Spare Parts' },
+            isSpare: true
+          },
+          {
+            _id: 'makita-side-handle-grinder',
+            name: 'Makita Side Handle for Angle Grinder',
+            slug: 'makita-side-handle-grinder',
+            brand: 'Makita',
+            price: 2500,
+            stockQty: 35,
+            images: ['/assets/products/makita-side-handle.jpg'],
+            rating: 4.4,
+            categoryId: { name: 'Spare Parts' },
+            isSpare: true
+          }
+        ];
+        
+        setRelatedProducts(mockRelatedProducts);
       } else {
         // Fallback to API call for other products
         const response = await api.get(`/products/${id}`);
@@ -669,7 +857,7 @@ export default function ProductDetails() {
             <span className="text-gray-900 font-medium truncate">{product.name}</span>
           </motion.nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 mb-8 lg:mb-12">
             {/* Product Images */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -678,7 +866,7 @@ export default function ProductDetails() {
               className="max-w-md mx-auto lg:mx-10 flex flex-col items-center lg:items-end"
             >
               {/* Main Image */}
-              <div className="relative mb-4 group w-full max-w-sm">
+              <div className="relative mb-3 md:mb-4 group w-full max-w-xs md:max-w-sm">
                 <div className="aspect-square bg-white rounded-xl shadow-md overflow-hidden electric-border-orange w-full">
                   <PlaceholderImage
                     src={product.images?.[selectedImage]}
@@ -691,14 +879,14 @@ export default function ProductDetails() {
                   {/* Zoom Button */}
                   <button
                     onClick={() => setShowImageModal(true)}
-                    className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all opacity-0 group-hover:opacity-100"
+                    className="absolute top-2 md:top-3 right-2 md:right-3 p-1.5 md:p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all opacity-0 group-hover:opacity-100"
                   >
-                    <MagnifyingGlassIcon className="w-4 h-4 text-gray-700" />
+                    <MagnifyingGlassIcon className="w-3 h-3 md:w-4 md:h-4 text-gray-700" />
                   </button>
 
                   {/* Discount Badge */}
                   {hasDiscount && (
-                    <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold shadow-md">
+                    <div className="absolute top-2 md:top-3 left-2 md:left-3 bg-red-500 text-white px-1.5 md:px-2 py-0.5 md:py-1 rounded-full text-xs font-bold shadow-md">
                       -{discountPercentage}% OFF
                     </div>
                   )}
@@ -709,15 +897,15 @@ export default function ProductDetails() {
                   <>
                     <button
                       onClick={() => setSelectedImage(prev => prev > 0 ? prev - 1 : product.images.length - 1)}
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2 p-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all"
+                      className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 p-1 md:p-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all"
                     >
-                      <ChevronLeftIcon className="w-4 h-4 text-gray-700" />
+                      <ChevronLeftIcon className="w-3 h-3 md:w-4 md:h-4 text-gray-700" />
                     </button>
                     <button
                       onClick={() => setSelectedImage(prev => prev < product.images.length - 1 ? prev + 1 : 0)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 p-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all"
+                      className="absolute right-2 md:right-3 top-1/2 transform -translate-y-1/2 p-1 md:p-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all"
                     >
-                      <ChevronRightIcon className="w-4 h-4 text-gray-700" />
+                      <ChevronRightIcon className="w-3 h-3 md:w-4 md:h-4 text-gray-700" />
                     </button>
                   </>
                 )}
@@ -725,12 +913,12 @@ export default function ProductDetails() {
 
               {/* Thumbnail Images */}
               {product.images?.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto pb-2 justify-center lg:justify-center w-full max-w-sm">
+                <div className="flex gap-1.5 md:gap-2 overflow-x-auto pb-2 justify-center lg:justify-center w-full max-w-xs md:max-w-sm">
                   {product.images.map((image, index) => (
                     <button
                       key={index}
                       onClick={() => setSelectedImage(index)}
-                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all ${
+                      className={`flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden transition-all ${
                         selectedImage === index 
                           ? 'electric-border-orange shadow-md' 
                           : 'electric-border-subtle hover:border-gray-300'
@@ -754,44 +942,44 @@ export default function ProductDetails() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-4 flex flex-col justify-start"
+              className="space-y-3 md:space-y-4 flex flex-col justify-start px-2 lg:px-0"
             >
               {/* Brand & Category */}
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-2 md:gap-3 flex-wrap">
                 {product.brand && (
-                  <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">
+                  <span className="px-2 md:px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs md:text-sm font-semibold">
                     {product.brand}
                   </span>
                 )}
                 {product.categoryId?.name && (
-                  <span className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">
+                  <span className="px-2 md:px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs md:text-sm">
                     {product.categoryId.name}
                   </span>
                 )}
               </div>
 
               {/* Product Name */}
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-lg md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
                 {product.name}
               </h1>
 
               {/* Price */}
               <div className="space-y-1">
-                <div className="flex items-center gap-3 flex-wrap">
+                <div className="flex items-center gap-2 md:gap-3 flex-wrap">
                   {hasDiscount ? (
                     <>
-                      <span className="text-2xl md:text-3xl font-bold text-gray-900">
+                      <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                         {formatPrice(product.salePrice)}
                       </span>
-                      <span className="text-lg text-gray-500 line-through">
+                      <span className="text-sm md:text-lg text-gray-500 line-through">
                         {formatPrice(product.price)}
                       </span>
-                      <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-sm font-semibold">
+                      <span className="px-1.5 md:px-2 py-0.5 md:py-1 bg-red-100 text-red-700 rounded text-xs md:text-sm font-semibold">
                         Save {formatPrice(product.price - product.salePrice)}
                       </span>
                     </>
                   ) : (
-                    <span className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                       {formatPrice(product.price)}
                     </span>
                   )}
@@ -805,55 +993,55 @@ export default function ProductDetails() {
               <div className="flex items-center gap-2">
                 {product.stockQty > 0 ? (
                   <>
-                    <CheckIcon className="w-4 h-4 text-green-500" />
-                    <span className="text-green-700 font-medium text-sm">
+                    <CheckIcon className="w-3 h-3 md:w-4 md:h-4 text-green-500" />
+                    <span className="text-green-700 font-medium text-xs md:text-sm">
                       In Stock ({product.stockQty} available)
                     </span>
                   </>
                 ) : (
                   <>
-                    <InformationCircleIcon className="w-4 h-4 text-red-500" />
-                    <span className="text-red-700 font-medium text-sm">Out of Stock</span>
+                    <InformationCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
+                    <span className="text-red-700 font-medium text-xs md:text-sm">Out of Stock</span>
                   </>
                 )}
               </div>
 
               {/* Quick Features */}
-              <div className="grid grid-cols-2 gap-3 p-3 bg-gray-200 rounded-lg electric-border-subtle">
-                <div className="flex items-center gap-2">
-                  <TruckIcon className="w-4 h-4 text-orange-500" />
+              <div className="grid grid-cols-2 gap-2 md:gap-3 p-2 md:p-3 bg-gray-200 rounded-lg electric-border-subtle">
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <TruckIcon className="w-3 h-3 md:w-4 md:h-4 text-orange-500" />
                   <span className="text-xs text-gray-700">Free Delivery</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheckIcon className="w-4 h-4 text-orange-500" />
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <ShieldCheckIcon className="w-3 h-3 md:w-4 md:h-4 text-orange-500" />
                   <span className="text-xs text-gray-700">1 Year Warranty</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <ClockIcon className="w-4 h-4 text-orange-500" />
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <ClockIcon className="w-3 h-3 md:w-4 md:h-4 text-orange-500" />
                   <span className="text-xs text-gray-700">2-5 Days Delivery</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <PhoneIcon className="w-4 h-4 text-orange-500" />
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <PhoneIcon className="w-3 h-3 md:w-4 md:h-4 text-orange-500" />
                   <span className="text-xs text-gray-700">24/7 Support</span>
                 </div>
               </div>
 
               {/* Quantity & Actions */}
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {/* Quantity Selector */}
                 <div className="flex items-center gap-3">
-                  <label className="text-sm font-medium text-gray-700">Qty:</label>
+                  <label className="text-xs md:text-sm font-medium text-gray-700">Qty:</label>
                   <div className="flex items-center electric-border-subtle rounded-lg">
                     <button
                       onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                      className="p-2 hover:bg-gray-100 transition-colors text-sm"
+                      className="p-1.5 md:p-2 hover:bg-gray-100 transition-colors text-sm"
                     >
                       -
                     </button>
-                    <span className="px-3 py-2 font-medium text-sm min-w-[40px] text-center">{quantity}</span>
+                    <span className="px-2 md:px-3 py-1.5 md:py-2 font-medium text-sm min-w-[40px] text-center">{quantity}</span>
                     <button
                       onClick={() => setQuantity(prev => Math.min(product.stockQty, prev + 1))}
-                      className="p-2 hover:bg-gray-100 transition-colors text-sm"
+                      className="p-1.5 md:p-2 hover:bg-gray-100 transition-colors text-sm"
                       disabled={quantity >= product.stockQty}
                     >
                       +
@@ -862,32 +1050,32 @@ export default function ProductDetails() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="space-y-3">
-                  <div className="flex gap-3">
+                <div className="space-y-2 md:space-y-3">
+                  <div className="flex gap-2 md:gap-3">
                     <motion.button
                       onClick={handleAddToCart}
                       disabled={product.stockQty === 0}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-sm"
+                      className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 px-3 md:px-4 py-2.5 md:py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-xs md:text-sm"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <ShoppingCartIcon className="w-4 h-4" />
+                      <ShoppingCartIcon className="w-3 h-3 md:w-4 md:h-4" />
                       Add to Cart
                     </motion.button>
                     
                     <motion.button
                       onClick={handleBuyNow}
                       disabled={product.stockQty === 0}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-sm"
+                      className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 px-3 md:px-4 py-2.5 md:py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-xs md:text-sm"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <BoltIcon className="w-4 h-4" />
+                      <BoltIcon className="w-3 h-3 md:w-4 md:h-4" />
                       Buy Now
                     </motion.button>
                   </div>
                   
-                  <div className="flex gap-3 justify-center">
+                  <div className="flex gap-2 md:gap-3 justify-center">
                     <motion.button
                       onClick={handleWishlistToggle}
                       className="p-2 border border-gray-300 rounded-lg hover:border-orange-500 transition-all"
@@ -895,9 +1083,9 @@ export default function ProductDetails() {
                       whileTap={{ scale: 0.95 }}
                     >
                       {isInWishlist ? (
-                        <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                        <HeartSolidIcon className="w-4 h-4 md:w-5 md:h-5 text-red-500" />
                       ) : (
-                        <HeartIcon className="w-5 h-5 text-gray-600" />
+                        <HeartIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
                       )}
                     </motion.button>
                     
@@ -906,7 +1094,7 @@ export default function ProductDetails() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <ShareIcon className="w-5 h-5 text-gray-600" />
+                      <ShareIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
                     </motion.button>
                   </div>
                 </div>
@@ -914,12 +1102,12 @@ export default function ProductDetails() {
 
               {/* Contact Options */}
               <div className="flex gap-2">
-                <button className="flex-1 flex items-center justify-center gap-2 px-3 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-all text-sm">
-                  <PhoneIcon className="w-4 h-4" />
+                <button className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-all text-xs md:text-sm">
+                  <PhoneIcon className="w-3 h-3 md:w-4 md:h-4" />
                   Call Now
                 </button>
-                <button className="flex-1 flex items-center justify-center gap-2 px-3 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-all text-sm">
-                  <ChatBubbleLeftRightIcon className="w-4 h-4" />
+                <button className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-all text-xs md:text-sm">
+                  <ChatBubbleLeftRightIcon className="w-3 h-3 md:w-4 md:h-4" />
                   Live Chat
                 </button>
               </div>
@@ -1196,44 +1384,44 @@ export default function ProductDetails() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-10"
+              className="mb-6 md:mb-10"
             >
-              <div className="text-center mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <div className="text-center mb-4 md:mb-6">
+                <h2 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-1 md:mb-2">
                   Compatible Spare Parts & Accessories
                 </h2>
-                <p className="text-gray-600 text-sm max-w-xl mx-auto">
+                <p className="text-gray-600 text-xs md:text-sm max-w-xl mx-auto px-2">
                   Enhance your tool's performance with genuine spare parts and accessories designed specifically for this model.
                 </p>
               </div>
               
               {/* Carousel Container */}
               <div className="relative group">
-                {/* Navigation Buttons */}
+                {/* Navigation Buttons - Hidden on mobile */}
                 <button
                   onClick={() => {
                     const container = document.getElementById('spares-carousel');
-                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                    container.scrollBy({ left: -200, behavior: 'smooth' });
                   }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 hidden md:block"
                 >
-                  <ChevronLeftIcon className="w-5 h-5 text-gray-700" />
+                  <ChevronLeftIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
                 </button>
                 <button
                   onClick={() => {
                     const container = document.getElementById('spares-carousel');
-                    container.scrollBy({ left: 300, behavior: 'smooth' });
+                    container.scrollBy({ left: 200, behavior: 'smooth' });
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 hidden md:block"
                 >
-                  <ChevronRightIcon className="w-5 h-5 text-gray-700" />
+                  <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
                 </button>
 
                 {/* Carousel */}
                 <div className="flex justify-center">
                   <div
                     id="spares-carousel"
-                    className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth max-w-6xl w-full px-4"
+                    className="flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide scroll-smooth max-w-6xl w-full px-2 md:px-4"
                     style={{
                       scrollbarWidth: 'none',
                       msOverflowStyle: 'none',
@@ -1245,11 +1433,10 @@ export default function ProductDetails() {
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="relative flex-shrink-0 w-[280px]"
-                      style={{ height: '420px' }}
+                      className="relative flex-shrink-0 w-[180px] md:w-[280px] h-[300px] md:h-[420px]"
                     >
                       <div className="absolute -top-1 -right-1 z-10">
-                        <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-md">
+                        <span className="bg-orange-500 text-white text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-full font-semibold shadow-md">
                           SPARE
                         </span>
                       </div>
@@ -1262,8 +1449,8 @@ export default function ProductDetails() {
                 </div>
 
                 {/* Gradient Overlays */}
-                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-4 md:w-8 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-4 md:w-8 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10"></div>
               </div>
             </motion.div>
           )}
@@ -1275,42 +1462,42 @@ export default function ProductDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <div className="text-center mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <div className="text-center mb-4 md:mb-6">
+                <h2 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-1 md:mb-2">
                   You Might Also Like
                 </h2>
-                <p className="text-gray-600 text-sm max-w-xl mx-auto">
+                <p className="text-gray-600 text-xs md:text-sm max-w-xl mx-auto px-2">
                   Complete your toolkit with these complementary professional tools from the same series.
                 </p>
               </div>
               
               {/* Carousel Container */}
               <div className="relative group">
-                {/* Navigation Buttons */}
+                {/* Navigation Buttons - Hidden on mobile */}
                 <button
                   onClick={() => {
                     const container = document.getElementById('related-carousel');
-                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                    container.scrollBy({ left: -200, behavior: 'smooth' });
                   }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 hidden md:block"
                 >
-                  <ChevronLeftIcon className="w-5 h-5 text-gray-700" />
+                  <ChevronLeftIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
                 </button>
                 <button
                   onClick={() => {
                     const container = document.getElementById('related-carousel');
-                    container.scrollBy({ left: 300, behavior: 'smooth' });
+                    container.scrollBy({ left: 200, behavior: 'smooth' });
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 hidden md:block"
                 >
-                  <ChevronRightIcon className="w-5 h-5 text-gray-700" />
+                  <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
                 </button>
 
                 {/* Carousel */}
                 <div className="flex justify-center">
                   <div
                     id="related-carousel"
-                    className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth max-w-6xl w-full px-4"
+                    className="flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide scroll-smooth max-w-6xl w-full px-2 md:px-4"
                     style={{
                       scrollbarWidth: 'none',
                       msOverflowStyle: 'none',
@@ -1322,8 +1509,7 @@ export default function ProductDetails() {
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex-shrink-0 w-[280px]"
-                      style={{ height: '420px' }}
+                      className="flex-shrink-0 w-[180px] md:w-[280px] h-[300px] md:h-[420px]"
                     >
                       <div className="h-full">
                         <ProductCard product={relatedProduct} />
@@ -1334,8 +1520,8 @@ export default function ProductDetails() {
                 </div>
 
                 {/* Gradient Overlays */}
-                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-4 md:w-8 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-4 md:w-8 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10"></div>
               </div>
             </motion.div>
           )}
@@ -1345,21 +1531,21 @@ export default function ProductDetails() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-10 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl"
+            className="mt-6 md:mt-10 p-3 md:p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl"
           >
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-2 md:gap-3">
               <div className="flex-shrink-0">
-                <TruckIcon className="w-6 h-6 text-amber-600" />
+                <TruckIcon className="w-5 h-5 md:w-6 md:h-6 text-amber-600" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-amber-900 mb-2">
+                <h3 className="text-sm md:text-base font-semibold text-amber-900 mb-1 md:mb-2">
                   Important Delivery Information
                 </h3>
-                <p className="text-amber-800 mb-2 text-sm">
+                <p className="text-amber-800 mb-1 md:mb-2 text-xs md:text-sm">
                   <strong>Courier charges are NOT included in the product price.</strong> 
                   You will pay the courier charge directly to the delivery person upon receiving your order.
                 </p>
-                <div className="flex items-center gap-2 text-xs text-amber-700">
+                <div className="flex items-center gap-1 md:gap-2 text-xs text-amber-700">
                   <InformationCircleIcon className="w-3 h-3" />
                   <span>Card payment options coming soon! Currently accepting bank transfers only.</span>
                 </div>

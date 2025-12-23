@@ -50,7 +50,7 @@ const mockProducts = [
   {
     _id: '1',
     name: 'Professional Drill Set 18V',
-    slug: 'professional-drill-set-18v',
+    slug: 'bosch-professional-drill-gsb-18v-85c',
     brand: 'Bosch',
     price: 25000,
     salePrice: 22500,
@@ -65,7 +65,7 @@ const mockProducts = [
   {
     _id: '2',
     name: 'Angle Grinder 115mm',
-    slug: 'angle-grinder-115mm',
+    slug: 'makita-ga4530r-angle-grinder-115mm',
     brand: 'Makita',
     price: 18000,
     stockQty: 8,

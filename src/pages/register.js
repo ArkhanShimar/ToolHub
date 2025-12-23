@@ -234,22 +234,22 @@ export default function RegisterPage() {
           />
         </div>
 
-        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 py-20 md:py-20 px-3 md:px-4 sm:px-6 lg:px-8 pt-24 md:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-2xl md:max-w-4xl mx-auto"
           >
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
               <motion.h2 
-                className="text-4xl md:text-5xl font-bold text-white mb-4"
+                className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-4"
                 animate={{
                   textShadow: [
                     "0 0 10px rgba(229, 90, 43, 0.3)",
@@ -265,7 +265,7 @@ export default function RegisterPage() {
               >
                 Join ToolHub
               </motion.h2>
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-sm md:text-lg">
                 Create your account and access professional-grade tools
               </p>
             </motion.div>
@@ -275,7 +275,7 @@ export default function RegisterPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 md:p-12 border border-accent-500/20 relative overflow-hidden"
+              className="bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 backdrop-blur-2xl rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border border-accent-500/20 relative overflow-hidden"
             >
               {/* Enhanced Decorative Elements */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-accent-500/30 to-accent-600/10 rounded-full -translate-y-24 translate-x-24 blur-2xl" />
@@ -283,27 +283,27 @@ export default function RegisterPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-500/5 to-transparent" />
 
               <div className="relative z-10">
-                <form onSubmit={handleSubmit} className="space-y-10">
+                <form onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
                   {/* Personal Information */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-                      <UserIcon className="w-7 h-7 mr-3 text-accent-500" />
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-4 md:mb-8 flex items-center">
+                      <UserIcon className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3 text-accent-500" />
                       Personal Information
                     </h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                       {/* Name */}
                       <div className="group">
-                        <label htmlFor="name" className="block text-sm font-bold text-white mb-3 group-focus-within:text-accent-400 transition-colors">
+                        <label htmlFor="name" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           Full Name *
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <UserIcon className="h-5 w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
+                          <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                            <UserIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                           </div>
                           <input
                             id="name"
@@ -312,21 +312,21 @@ export default function RegisterPage() {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-4 bg-black/40 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner"
+                            className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                             placeholder="Enter your full name"
                           />
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                         </div>
                       </div>
 
                       {/* Phone */}
                       <div className="group">
-                        <label htmlFor="phone" className="block text-sm font-bold text-white mb-3 group-focus-within:text-accent-400 transition-colors">
+                        <label htmlFor="phone" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           Phone Number *
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <PhoneIcon className="h-5 w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
+                          <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                            <PhoneIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                           </div>
                           <input
                             id="phone"
@@ -335,22 +335,22 @@ export default function RegisterPage() {
                             required
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-4 bg-black/40 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner"
+                            className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                             placeholder="07X XXX XXXX"
                           />
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                         </div>
                       </div>
                     </div>
 
                     {/* Email */}
-                    <div className="mt-8 group">
-                      <label htmlFor="email" className="block text-sm font-bold text-white mb-3 group-focus-within:text-accent-400 transition-colors">
+                    <div className="mt-4 md:mt-8 group">
+                      <label htmlFor="email" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                         Email Address *
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <EnvelopeIcon className="h-5 w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                          <EnvelopeIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                         </div>
                         <input
                           id="email"
@@ -360,10 +360,10 @@ export default function RegisterPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full pl-12 pr-4 py-4 bg-black/40 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner"
+                          className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                           placeholder="Enter your email address"
                         />
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                        <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                       </div>
                     </div>
                   </motion.div>
@@ -374,19 +374,19 @@ export default function RegisterPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.7, duration: 0.5 }}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                      <HomeIcon className="w-6 h-6 mr-3 text-accent-500" />
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center">
+                      <HomeIcon className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-accent-500" />
                       Delivery Address
                     </h3>
                     
                     {/* Address Line 1 */}
-                    <div className="mb-6">
-                      <label htmlFor="address.line1" className="block text-sm font-semibold text-white mb-2">
+                    <div className="mb-4 md:mb-6 group">
+                      <label htmlFor="address.line1" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                         Address Line 1 *
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <MapPinIcon className="h-5 w-5 text-gray-400" />
+                        <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                          <MapPinIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                         </div>
                         <input
                           id="address.line1"
@@ -395,15 +395,16 @@ export default function RegisterPage() {
                           required
                           value={formData.address.line1}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                          className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                           placeholder="House number and street name"
                         />
+                        <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                       </div>
                     </div>
 
                     {/* Address Line 2 */}
-                    <div className="mb-6">
-                      <label htmlFor="address.line2" className="block text-sm font-semibold text-white mb-2">
+                    <div className="mb-4 md:mb-6 group">
+                      <label htmlFor="address.line2" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                         Address Line 2
                       </label>
                       <input
@@ -412,15 +413,15 @@ export default function RegisterPage() {
                         type="text"
                         value={formData.address.line2}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                        className="w-full px-3 md:px-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                         placeholder="Apartment, suite, etc. (optional)"
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
                       {/* City */}
-                      <div>
-                        <label htmlFor="address.city" className="block text-sm font-semibold text-white mb-2">
+                      <div className="group">
+                        <label htmlFor="address.city" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           City *
                         </label>
                         <input
@@ -430,14 +431,14 @@ export default function RegisterPage() {
                           required
                           value={formData.address.city}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                          className="w-full px-3 md:px-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                           placeholder="City"
                         />
                       </div>
 
                       {/* District */}
-                      <div>
-                        <label htmlFor="address.district" className="block text-sm font-semibold text-white mb-2">
+                      <div className="group">
+                        <label htmlFor="address.district" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           District *
                         </label>
                         <select
@@ -446,7 +447,7 @@ export default function RegisterPage() {
                           required
                           value={formData.address.district}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                          className="w-full px-3 md:px-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                         >
                           <option value="" className="bg-gray-800">Select District</option>
                           {sriLankanDistricts.map(district => (
@@ -458,8 +459,8 @@ export default function RegisterPage() {
                       </div>
 
                       {/* Postal Code */}
-                      <div>
-                        <label htmlFor="address.postalCode" className="block text-sm font-semibold text-white mb-2">
+                      <div className="group">
+                        <label htmlFor="address.postalCode" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           Postal Code
                         </label>
                         <input
@@ -468,7 +469,7 @@ export default function RegisterPage() {
                           type="text"
                           value={formData.address.postalCode}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                          className="w-full px-3 md:px-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                           placeholder="Postal Code"
                         />
                       </div>
@@ -481,20 +482,20 @@ export default function RegisterPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                      <LockClosedIcon className="w-6 h-6 mr-3 text-accent-500" />
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center">
+                      <LockClosedIcon className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-accent-500" />
                       Account Security
                     </h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       {/* Password */}
-                      <div>
-                        <label htmlFor="password" className="block text-sm font-semibold text-white mb-2">
+                      <div className="group">
+                        <label htmlFor="password" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           Password *
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <LockClosedIcon className="h-5 w-5 text-gray-400" />
+                          <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                            <LockClosedIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                           </div>
                           <input
                             id="password"
@@ -504,34 +505,35 @@ export default function RegisterPage() {
                             required
                             value={formData.password}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-12 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                            className="w-full pl-10 md:pl-12 pr-12 md:pr-14 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                             placeholder="Create a password"
                           />
                           <button
                             type="button"
                             onClick={() => setShowPassword(!showPassword)}
-                            className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-accent-400 transition-colors"
+                            className="absolute inset-y-0 right-0 pr-3 md:pr-4 flex items-center hover:text-accent-400 transition-colors"
                           >
                             {showPassword ? (
-                              <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                              <EyeSlashIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                             ) : (
-                              <EyeIcon className="h-5 w-5 text-gray-400" />
+                              <EyeIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                             )}
                           </button>
+                          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                         </div>
-                        <p className="text-xs text-gray-400 mt-2">
+                        <p className="text-xs text-gray-400 mt-1 md:mt-2">
                           Must be at least 6 characters long
                         </p>
                       </div>
 
                       {/* Confirm Password */}
-                      <div>
-                        <label htmlFor="confirmPassword" className="block text-sm font-semibold text-white mb-2">
+                      <div className="group">
+                        <label htmlFor="confirmPassword" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                           Confirm Password *
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <LockClosedIcon className="h-5 w-5 text-gray-400" />
+                          <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                            <LockClosedIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                           </div>
                           <input
                             id="confirmPassword"
@@ -541,20 +543,21 @@ export default function RegisterPage() {
                             required
                             value={formData.confirmPassword}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-12 py-3 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-accent-500 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                            className="w-full pl-10 md:pl-12 pr-12 md:pr-14 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                             placeholder="Confirm your password"
                           />
                           <button
                             type="button"
                             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                            className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-accent-400 transition-colors"
+                            className="absolute inset-y-0 right-0 pr-3 md:pr-4 flex items-center hover:text-accent-400 transition-colors"
                           >
                             {showConfirmPassword ? (
-                              <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                              <EyeSlashIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                             ) : (
-                              <EyeIcon className="h-5 w-5 text-gray-400" />
+                              <EyeIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                             )}
                           </button>
+                          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                         </div>
                       </div>
                     </div>
@@ -574,9 +577,9 @@ export default function RegisterPage() {
                       required
                       checked={formData.agreeToTerms}
                       onChange={handleChange}
-                      className="h-5 w-5 text-accent-500 focus:ring-accent-500 border-gray-300 rounded mt-1 bg-white/10 border-white/20"
+                      className="h-4 w-4 md:h-5 md:w-5 text-accent-500 focus:ring-accent-500 border-gray-300 rounded mt-1 bg-white/10 border-white/20"
                     />
-                    <label htmlFor="agreeToTerms" className="ml-3 block text-sm text-gray-300">
+                    <label htmlFor="agreeToTerms" className="ml-2 md:ml-3 block text-xs md:text-sm text-gray-300">
                       I agree to the{' '}
                       <Link href="/terms-conditions" className="text-accent-400 hover:text-accent-300 transition-colors">
                         Terms & Conditions
@@ -597,12 +600,12 @@ export default function RegisterPage() {
                     transition={{ delay: 1, duration: 0.5 }}
                     whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(229, 90, 43, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-accent-600 hover:via-accent-700 hover:to-accent-600 transition-all duration-500 shadow-2xl hover:shadow-accent-500/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 relative overflow-hidden"
+                    className="w-full bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500 text-white py-3 md:py-4 px-4 md:px-6 rounded-xl md:rounded-2xl font-bold text-sm md:text-lg hover:from-accent-600 hover:via-accent-700 hover:to-accent-600 transition-all duration-500 shadow-2xl hover:shadow-accent-500/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                         <span className="relative z-10">Creating Account...</span>
                       </>
                     ) : (
@@ -616,21 +619,21 @@ export default function RegisterPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
-                  className="mt-8"
+                  className="mt-6 md:mt-8"
                 >
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-white/20" />
                     </div>
-                    <div className="relative flex justify-center text-sm">
+                    <div className="relative flex justify-center text-xs md:text-sm">
                       <span className="px-4 bg-transparent text-white">Already have an account?</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 text-center">
+                  <div className="mt-4 md:mt-6 text-center">
                     <Link
                       href="/login"
-                      className="font-medium text-white hover:text-accent-400 transition-colors text-lg"
+                      className="font-medium text-white hover:text-accent-400 transition-colors text-sm md:text-lg"
                     >
                       Sign in to your account
                     </Link>

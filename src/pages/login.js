@@ -137,12 +137,12 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="relative z-10 flex items-center justify-center min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 flex items-center justify-center min-h-screen py-20 md:py-20 px-3 md:px-4 sm:px-6 lg:px-8 pt-24 md:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-md w-full space-y-8"
+            className="max-w-sm md:max-w-md w-full space-y-6 md:space-y-8"
           >
             {/* Header */}
             <motion.div
@@ -152,7 +152,7 @@ export default function LoginPage() {
               className="text-center"
             >
               <motion.h2 
-                className="text-4xl font-bold text-white mb-3"
+                className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3"
                 animate={{
                   textShadow: [
                     "0 0 10px rgba(229, 90, 43, 0.3)",
@@ -168,7 +168,7 @@ export default function LoginPage() {
               >
                 Welcome Back
               </motion.h2>
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-sm md:text-lg">
                 Sign in to access your professional tools
               </p>
             </motion.div>
@@ -178,7 +178,7 @@ export default function LoginPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 border border-accent-500/20 relative overflow-hidden"
+              className="bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 backdrop-blur-2xl rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-10 border border-accent-500/20 relative overflow-hidden"
             >
               {/* Enhanced Decorative Elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent-500/30 to-accent-600/10 rounded-full -translate-y-20 translate-x-20 blur-xl" />
@@ -186,7 +186,7 @@ export default function LoginPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-500/5 to-transparent" />
 
               <div className="relative z-10">
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
                   {/* Email */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -194,12 +194,12 @@ export default function LoginPage() {
                     transition={{ delay: 0.6, duration: 0.5 }}
                     className="group"
                   >
-                    <label htmlFor="email" className="block text-sm font-bold text-white mb-3 group-focus-within:text-accent-400 transition-colors">
+                    <label htmlFor="email" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                       Email Address
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <UserIcon className="h-5 w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
+                      <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                        <UserIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                       </div>
                       <input
                         id="email"
@@ -209,10 +209,10 @@ export default function LoginPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full pl-12 pr-4 py-4 bg-black/40 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner"
+                        className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                         placeholder="Enter your email address"
                       />
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                      <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                     </div>
                   </motion.div>
 
@@ -223,12 +223,12 @@ export default function LoginPage() {
                     transition={{ delay: 0.7, duration: 0.5 }}
                     className="group"
                   >
-                    <label htmlFor="password" className="block text-sm font-bold text-white mb-3 group-focus-within:text-accent-400 transition-colors">
+                    <label htmlFor="password" className="block text-xs md:text-sm font-bold text-white mb-2 md:mb-3 group-focus-within:text-accent-400 transition-colors">
                       Password
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <LockClosedIcon className="h-5 w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
+                      <div className="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+                        <LockClosedIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400 group-focus-within:text-accent-400 transition-colors" />
                       </div>
                       <input
                         id="password"
@@ -238,21 +238,21 @@ export default function LoginPage() {
                         required
                         value={formData.password}
                         onChange={handleChange}
-                        className="w-full pl-12 pr-14 py-4 bg-black/40 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner"
+                        className="w-full pl-10 md:pl-12 pr-12 md:pr-14 py-3 md:py-4 bg-black/40 border-2 border-gray-700/50 rounded-xl md:rounded-2xl text-white placeholder-gray-500 focus:border-accent-500 focus:bg-black/60 focus:outline-none transition-all duration-300 backdrop-blur-sm shadow-inner text-sm md:text-base"
                         placeholder="Enter your password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute inset-y-0 right-0 pr-4 flex items-center hover:text-accent-400 transition-colors"
+                        className="absolute inset-y-0 right-0 pr-3 md:pr-4 flex items-center hover:text-accent-400 transition-colors"
                       >
                         {showPassword ? (
-                          <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                          <EyeSlashIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                         ) : (
-                          <EyeIcon className="h-5 w-5 text-gray-400" />
+                          <EyeIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                         )}
                       </button>
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                      <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-accent-500/10 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                     </div>
                   </motion.div>
 
@@ -261,21 +261,21 @@ export default function LoginPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="flex items-center justify-between"
+                    className="flex items-center justify-between text-xs md:text-sm"
                   >
                     <div className="flex items-center">
                       <input
                         id="remember-me"
                         name="remember-me"
                         type="checkbox"
-                        className="h-4 w-4 text-accent-500 focus:ring-accent-500 border-gray-300 rounded bg-white/10 border-white/20"
+                        className="h-3 w-3 md:h-4 md:w-4 text-accent-500 focus:ring-accent-500 border-gray-300 rounded bg-white/10 border-white/20"
                       />
-                      <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300">
+                      <label htmlFor="remember-me" className="ml-2 block text-gray-300">
                         Remember me
                       </label>
                     </div>
 
-                    <div className="text-sm">
+                    <div>
                       <Link href="/forgot-password" className="font-medium text-white hover:text-accent-400 transition-colors">
                         Forgot password?
                       </Link>
@@ -291,12 +291,12 @@ export default function LoginPage() {
                     transition={{ delay: 0.9, duration: 0.5 }}
                     whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(229, 90, 43, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-accent-600 hover:via-accent-700 hover:to-accent-600 transition-all duration-500 shadow-2xl hover:shadow-accent-500/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 relative overflow-hidden"
+                    className="w-full bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500 text-white py-3 md:py-4 px-4 md:px-6 rounded-xl md:rounded-2xl font-bold text-sm md:text-lg hover:from-accent-600 hover:via-accent-700 hover:to-accent-600 transition-all duration-500 shadow-2xl hover:shadow-accent-500/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                         <span className="relative z-10">Signing in...</span>
                       </>
                     ) : (
@@ -310,21 +310,21 @@ export default function LoginPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 0.5 }}
-                  className="mt-8"
+                  className="mt-6 md:mt-8"
                 >
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-white/20" />
                     </div>
-                    <div className="relative flex justify-center text-sm">
+                    <div className="relative flex justify-center text-xs md:text-sm">
                       <span className="px-4 bg-transparent text-white">Don't have an account?</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 text-center">
+                  <div className="mt-4 md:mt-6 text-center">
                     <Link
                       href="/register"
-                      className="font-medium text-white hover:text-accent-400 transition-colors text-lg"
+                      className="font-medium text-white hover:text-accent-400 transition-colors text-sm md:text-lg"
                     >
                       Create a new account
                     </Link>
@@ -338,7 +338,7 @@ export default function LoginPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.5 }}
-              className="text-center text-sm text-gray-400"
+              className="text-center text-xs md:text-sm text-gray-400 px-2"
             >
               <p>
                 By signing in, you agree to our{' '}
