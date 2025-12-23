@@ -87,12 +87,12 @@ export default function Home() {
       <Hero />
 
       {/* Hot Deals Section */}
-      <section className="py-16 bg-gray-200 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gray-200 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Floating Geometric Shapes */}
           <motion.div
-            className="absolute top-20 left-10 w-24 h-24 bg-accent-500/25 rounded-full shadow-lg"
+            className="absolute top-20 left-10 w-16 md:w-24 h-16 md:h-24 bg-accent-500/25 rounded-full shadow-lg"
             animate={{
               y: [0, -30, 0],
               x: [0, 20, 0],
@@ -105,7 +105,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-br from-accent-500/30 to-accent-600/20 rotate-45 shadow-md"
+            className="absolute top-40 right-20 w-12 md:w-20 h-12 md:h-20 bg-gradient-to-br from-accent-500/30 to-accent-600/20 rotate-45 shadow-md"
             animate={{
               rotate: [45, 225, 45],
               y: [0, -20, 0]
@@ -117,7 +117,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute bottom-32 left-1/4 w-16 h-16 bg-gray-400/40 rounded-full shadow-sm"
+            className="absolute bottom-32 left-1/4 w-10 md:w-16 h-10 md:h-16 bg-gray-400/40 rounded-full shadow-sm"
             animate={{
               y: [0, -40, 0],
               opacity: [0.4, 0.8, 0.4]
@@ -129,7 +129,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute bottom-20 right-1/3 w-28 h-28 border-3 border-accent-500/40 rounded-full"
+            className="absolute bottom-20 right-1/3 w-20 md:w-28 h-20 md:h-28 border-3 border-accent-500/40 rounded-full"
             animate={{
               scale: [1, 1.3, 1],
               rotate: [0, 180, 360]
@@ -143,7 +143,7 @@ export default function Home() {
           
           {/* More Prominent Moving Elements */}
           <motion.div
-            className="absolute w-3 h-3 bg-accent-500/50 rounded-full shadow-sm"
+            className="absolute w-2 md:w-3 h-2 md:h-3 bg-accent-500/50 rounded-full shadow-sm"
             animate={{
               x: [-50, 1200],
               y: [-50, 100]
@@ -155,7 +155,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute w-2 h-2 bg-gray-500/60 rounded-full"
+            className="absolute w-1.5 md:w-2 h-1.5 md:h-2 bg-gray-500/60 rounded-full"
             animate={{
               x: [1200, -50],
               y: [100, -30]
@@ -170,7 +170,7 @@ export default function Home() {
           
           {/* Additional Floating Elements */}
           <motion.div
-            className="absolute top-1/2 left-1/2 w-6 h-6 bg-accent-500/20 rotate-45"
+            className="absolute top-1/2 left-1/2 w-4 md:w-6 h-4 md:h-6 bg-accent-500/20 rotate-45"
             animate={{
               rotate: [45, 405],
               scale: [1, 1.5, 1]
@@ -182,7 +182,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute top-16 right-1/4 w-32 h-1 bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"
+            className="absolute top-16 right-1/4 w-24 md:w-32 h-0.5 md:h-1 bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"
             animate={{
               scaleX: [1, 1.5, 1],
               opacity: [0.3, 0.7, 0.3]
@@ -201,29 +201,29 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4"
             >
               🔥 Hot Deals
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4"
             >
               Limited time offers on professional tools with exclusive discounts
             </motion.p>
           </motion.div>
 
-          {/* Hot Deals Grid - Two Products Per Row */}
+          {/* Hot Deals Grid - Mobile Responsive */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"
           >
             {/* Deal 1 - Power Washer */}
             <motion.div 
@@ -232,44 +232,44 @@ export default function Home() {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Left Side - Product Image */}
-                <div className="sm:w-2/5 p-5 relative">
+                <div className="sm:w-2/5 p-4 md:p-5 relative">
                   {/* Scissors Icon */}
-                  <div className="absolute top-3 left-3 text-gray-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-2 md:top-3 left-2 md:left-3 text-gray-400">
+                    <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
                     </svg>
                   </div>
                   
                   {/* Hot Item Badge */}
-                  <div className="absolute top-3 right-3 w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 w-10 h-10 md:w-12 md:h-12 bg-accent-500 rounded-full flex items-center justify-center">
                     <div className="text-white text-xs font-bold text-center leading-tight">
                       HOT<br />ITEM
                     </div>
                   </div>
 
                   {/* Product Image */}
-                  <div className="flex justify-center items-center h-28 mt-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
-                      <div className="text-3xl">🚿</div>
+                  <div className="flex justify-center items-center h-20 md:h-28 mt-4 md:mt-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center">
+                      <div className="text-2xl md:text-3xl">🚿</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Side - Product Info */}
-                <div className="sm:w-3/5 p-5 flex flex-col justify-center">
+                <div className="sm:w-3/5 p-4 md:p-5 flex flex-col justify-center">
                   {/* Discount Badge */}
                   <div className="flex justify-end mb-2">
-                    <span className="text-accent-500 font-bold text-base">Save 20%</span>
-                    <div className="w-12 h-0.5 bg-accent-500 ml-2 mt-2.5"></div>
+                    <span className="text-accent-500 font-bold text-sm md:text-base">Save 20%</span>
+                    <div className="w-8 md:w-12 h-0.5 bg-accent-500 ml-2 mt-2 md:mt-2.5"></div>
                   </div>
 
                   {/* Product Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">
                     10-Bar Power Jet Steam Washer
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
                     On the purchase of any three (3) jet steam
                   </p>
 
@@ -456,11 +456,11 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="text-center mt-8 md:mt-12"
           >
             <Link
               href="/products?deals=true"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition-all font-medium text-sm shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition-all font-medium text-sm shadow-lg hover:shadow-xl"
             >
               View All Hot Deals
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -472,7 +472,7 @@ export default function Home() {
       </section>
 
       {/* Our Tools and Services Section */}
-      <section className="py-20 bg-gray-200 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gray-200 relative overflow-hidden">
         {/* Animated Wave Background */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Enhanced Wave Patterns */}
@@ -659,7 +659,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <motion.h2 
               variants={fadeInUp}
@@ -669,7 +669,7 @@ export default function Home() {
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-base text-gray-500 max-w-2xl mx-auto"
+              className="text-sm md:text-base text-gray-500 max-w-2xl mx-auto px-4"
             >
               Professional Grade Equipment for Every Need
             </motion.p>
@@ -681,13 +681,13 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4"
           >
             {['Power Tools', 'Hand Tools', 'Safety Equipment', 'Measuring Tools', 'Storage', 'Spare Parts', 'Welding', 'Electrical'].map((category, index) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(index)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all border-2 ${
+                className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all border-2 ${
                   activeCategory === index 
                     ? 'bg-accent-500 text-white shadow-md border-accent-500' 
                     : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-300 hover:border-accent-500'
@@ -704,7 +704,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10"
           >
             {/* Professional Drill Set */}
             <motion.div 
@@ -858,12 +858,12 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gray-900 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-accent-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-accent-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-32 md:w-40 h-32 md:h-40 bg-accent-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-48 md:w-60 h-48 md:h-60 bg-accent-500/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -872,17 +872,17 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4"
             >
               Why Choose Hardware Tools?
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-lg text-gray-300 max-w-2xl mx-auto"
+              className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
             >
               We're committed to providing Sri Lankan professionals with the best tools 
               and service in the industry.
@@ -894,13 +894,13 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
                 variants={fadeInUp}
-                className="group text-center p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm hover:border-accent-500/50 transition-all duration-500 relative overflow-hidden"
+                className="group text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm hover:border-accent-500/50 transition-all duration-500 relative overflow-hidden"
                 style={{
                   background: `
                     linear-gradient(135deg, rgba(55, 65, 81, 0.6) 0%, rgba(17, 24, 39, 0.8) 100%),
@@ -924,18 +924,18 @@ export default function Home() {
 
                 <div className="relative z-10">
                   <motion.div 
-                    className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+                    className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-lg"
                     whileHover={{ 
                       scale: 1.1,
                       boxShadow: '0 0 25px rgba(229, 90, 43, 0.6)'
                     }}
                   >
-                    <feature.icon className="w-8 h-8 text-white" />
+                    <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent-500 transition-colors">
+                  <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 group-hover:text-accent-500 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -953,14 +953,14 @@ export default function Home() {
 
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden"
+            className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16 text-center text-white relative overflow-hidden"
           >
             {/* Animated Background Grid */}
             <div className="absolute inset-0 opacity-20">
@@ -971,10 +971,10 @@ export default function Home() {
                     linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
                   `,
-                  backgroundSize: '40px 40px'
+                  backgroundSize: '30px 30px'
                 }}
                 animate={{
-                  backgroundPosition: ['0px 0px', '40px 40px']
+                  backgroundPosition: ['0px 0px', '30px 30px']
                 }}
                 transition={{
                   duration: 20,
@@ -986,7 +986,7 @@ export default function Home() {
 
             {/* Floating Geometric Elements */}
             <motion.div
-              className="absolute top-12 left-12 w-16 h-16 border-2 border-white/20"
+              className="absolute top-8 md:top-12 left-8 md:left-12 w-12 md:w-16 h-12 md:h-16 border-2 border-white/20"
               animate={{
                 rotate: [0, 360],
                 scale: [1, 1.1, 1]
@@ -998,7 +998,7 @@ export default function Home() {
               }}
             />
             <motion.div
-              className="absolute bottom-12 right-12 w-20 h-20 border-2 border-accent-500/30 rotate-45"
+              className="absolute bottom-8 md:bottom-12 right-8 md:right-12 w-16 md:w-20 h-16 md:h-20 border-2 border-accent-500/30 rotate-45"
               animate={{
                 rotate: [45, 405],
                 y: [0, -10, 0]
@@ -1010,7 +1010,7 @@ export default function Home() {
               }}
             />
             <motion.div
-              className="absolute top-1/2 left-16 w-12 h-12 bg-accent-500/20 rounded-full"
+              className="absolute top-1/2 left-12 md:left-16 w-8 md:w-12 h-8 md:h-12 bg-accent-500/20 rounded-full"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.2, 0.4, 0.2]
@@ -1026,7 +1026,7 @@ export default function Home() {
             <div className="relative z-20">
               <motion.h2 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight"
               >
                 Unlock Superior Performance<br />
                 <span className="text-white">for Your Machinery Needs</span>
@@ -1034,12 +1034,12 @@ export default function Home() {
               
               <motion.div 
                 variants={fadeInUp}
-                className="mb-8"
+                className="mb-6 md:mb-8"
               >
-                <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-2">
+                <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto mb-2 px-4">
                   Experience unmatched reliability and durability with our top-tier heavy machinery solutions.
                 </p>
-                <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto">
+                <p className="text-sm md:text-base lg:text-lg text-gray-400 max-w-3xl mx-auto px-4">
                   From construction to industrial projects, we ensure optimal performance and longevity.
                 </p>
               </motion.div>
@@ -1049,11 +1049,11 @@ export default function Home() {
               >
                 <Link 
                   href="/contact" 
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105"
+                  className="inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition-all font-semibold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Contact Us
                   <svg 
-                    className="w-5 h-5" 
+                    className="w-4 h-4 md:w-5 md:h-5" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"

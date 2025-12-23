@@ -54,22 +54,22 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 lg:gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2 mb-8 lg:mb-0">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="lg:col-span-2 mb-8 lg:mb-0 text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start space-x-2 mb-4">
               <div className="w-8 h-8 bg-accent-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">⚙️</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">MegaEquip</h3>
+                <h3 className="text-xl font-bold">ToolHub</h3>
               </div>
             </div>
             
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-              Mighty Gear provides high-performance machinery solutions, ensuring reliability and efficiency for your industrial needs.
+            <p className="text-gray-400 mb-6 text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
+              Professional hardware tools and equipment for Sri Lankan industries. Quality products with reliable service since 2008.
             </p>
 
             {/* Newsletter Signup */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 max-w-md mx-auto lg:mx-0">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -81,10 +81,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Footer Links - Two columns on mobile */}
+          {/* Footer Links - Centered on mobile */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 lg:col-span-4">
             {footerSections.map((section, index) => (
-              <div key={section.title}>
+              <div key={section.title} className="text-center lg:text-left">
                 <h4 className="text-white font-semibold mb-4 text-sm">{section.title}</h4>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
@@ -103,13 +103,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 lg:mt-12 pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm text-center sm:text-left">
-            Copyright © {currentYear} MegaEquip. All Rights Reserved
+        {/* Bottom Bar - Centered */}
+        <div className="border-t border-gray-800 mt-8 lg:mt-12 pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4">
+          <p className="text-gray-500 text-sm text-center">
+            Copyright © {currentYear} ToolHub. All Rights Reserved
           </p>
           
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center justify-center space-x-3">
             {/* Social Media Icons */}
             <Link href="#" className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center hover:bg-accent-500 transition-colors">
               <span className="text-sm">f</span>
@@ -126,8 +126,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-
     </footer>
   );
 }
