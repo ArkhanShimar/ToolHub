@@ -25,6 +25,8 @@ export default function ProductsPage() {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState('grid');
   const [activeCategory, setActiveCategory] = useState('');
+  const [windowWidth, setWindowWidth] = useState(1200); // Default width for SSR
+  const [isMounted, setIsMounted] = useState(false);
   
   // Filter states
   const [filters, setFilters] = useState({
@@ -46,6 +48,18 @@ export default function ProductsPage() {
   useEffect(() => {
     loadProducts();
   }, [filters, router.query]);
+
+  // Set window width on client side
+  useEffect(() => {
+    setIsMounted(true);
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   const loadInitialData = async () => {
     try {
@@ -116,7 +130,9 @@ export default function ProductsPage() {
 
   const handlePageChange = (page) => {
     setFilters(prev => ({ ...prev, page }));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const sortOptions = [
@@ -231,29 +247,33 @@ export default function ProductsPage() {
             ))}
 
             {/* Moving Light Beams */}
-            <motion.div
-              className="absolute top-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
-              animate={{
-                x: [-200, window.innerWidth + 200],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-1/3 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-              animate={{
-                x: [window.innerWidth + 200, -200],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 3
-              }}
-            />
+            {isMounted && (
+              <>
+                <motion.div
+                  className="absolute top-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
+                  animate={{
+                    x: [-200, windowWidth + 200],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/3 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: [windowWidth + 200, -200],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: 3
+                  }}
+                />
+              </>
+            )}
 
             {/* Pulsing Circles */}
             <motion.div

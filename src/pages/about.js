@@ -22,6 +22,8 @@ export default function AboutPage() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(1200); // Default width for SSR
+  const [isMounted, setIsMounted] = useState(false);
 
   // Parallax transforms
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -35,8 +37,22 @@ export default function AboutPage() {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, []);
+
+  // Set window width on client side
+  useEffect(() => {
+    setIsMounted(true);
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   const stats = [
@@ -242,17 +258,19 @@ export default function AboutPage() {
             />
 
             {/* Moving Light Beams - Responsive */}
-            <motion.div
-              className="absolute top-0 w-full h-1 md:h-2 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
-              animate={{
-                x: [-100, window.innerWidth + 100],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
+            {isMounted && (
+              <motion.div
+                className="absolute top-0 w-full h-1 md:h-2 bg-gradient-to-r from-transparent via-accent-500/50 to-transparent"
+                animate={{
+                  x: [-100, windowWidth + 100],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            )}
 
             {/* Glowing Orbs - Mobile friendly */}
             <motion.div
