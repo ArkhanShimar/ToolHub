@@ -86,43 +86,56 @@ export default function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="lg:hidden mt-4"
             >
-              <div className="bg-white/10 backdrop-blur-md electric-border-subtle rounded-2xl p-4">
-                <nav className="space-y-4">
-                  {navigation.map((item) => (
-                    <Link
+              <div className="bg-white/95 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl p-4 mx-4 max-w-xs ml-auto mr-4">
+                <nav className="space-y-1">
+                  {navigation.map((item, index) => (
+                    <motion.div
                       key={item.name}
-                      href={item.href}
-                      className="block text-white/90 hover:text-accent-500 font-medium transition-colors py-2 text-sm"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.2 }}
                     >
-                      {item.name}
-                    </Link>
+                      <Link
+                        href={item.href}
+                        className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 hover:bg-accent-50 font-medium transition-all py-2 px-3 rounded-xl group"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <div className="w-1.5 h-1.5 bg-accent-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span className="text-sm">{item.name}</span>
+                      </Link>
+                    </motion.div>
                   ))}
                   
                   {/* Mobile Actions */}
-                  <div className="pt-4 border-t border-white/20 space-y-3">
-                    <div className="flex flex-col space-y-2">
+                  <motion.div 
+                    className="pt-3 mt-3 border-t border-gray-200 space-y-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.2 }}
+                  >
+                    <div className="space-y-2">
                       <Link
                         href="/login"
-                        className="text-center px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors border border-white/20 rounded-full"
+                        className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-all border border-gray-200 hover:border-gray-300 rounded-xl hover:bg-gray-50"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Log In
                       </Link>
                       <Link
                         href="/register"
-                        className="text-center px-4 py-2 text-sm font-medium bg-accent-500 text-white rounded-full hover:bg-accent-600 transition-colors"
+                        className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all shadow-md hover:shadow-lg"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Sign Up
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
                 </nav>
               </div>
             </motion.div>
